@@ -117,15 +117,18 @@ messages.scrollTop = messages.scrollHeight;
 
 // Respuestas simuladas básicas
 function responderSimulado(texto) {
-texto = texto.toLowerCase();
-if (texto.includes('hola')) return '¡Hola! ¿En qué puedo ayudarte?';
-if (texto.includes('precio')) return 'Puedes ver todos los precios en la tienda.';
-if (texto.includes('recomendados')) return 'Nuestras ofertas';
-if (texto.includes('ofertas')) return '¡Claro! contamos con muchas ofertas te encantaran 😊';
-if (texto.includes('talla')) return 'Tenemos tallas para adultos, niños y bebés.';
-if (texto.includes('gracias')) return '¡Con gusto! 😊';
-return 'Lo siento, aún estoy aprendiendo 🧠';
-}
+  texto = texto.toLowerCase();
+  if (texto.includes('hola')) return '¡Hola! ¿En qué puedo ayudarte?';
+  if (texto.includes('precio')) return 'Puedes ver todos los precios en cada producto.';
+  if (texto.includes('recomendados')) return 'Nuestras ofertas, y nuetros productos de alta calidad';
+  if (texto.includes('tienen tienda fisica')) return 'Por el momento tienda fisica no tenemos, solo nos encontramos en linea, pero pronto la tendremos y te lo haremos saber';
+  if (texto.includes('tienen ofertas disponibles')) return '¡Claro! contamos con muchas ofertas te encantaran 😊';
+  if (texto.includes('Cuáles son las tallas disponibles')) 
+    return 'contamos con todas las tallas, desde la mas pequeña a la mas grande';
+  if (texto.includes('realizan descuentos')) return '¡Si!. Al realizar una compra mayor a $200.000 se te realiza un descuento del 20% en el valor total';
+  if (texto.includes('gracias')) return '¡Con gusto! 😊';
+  return 'Lo siento, aún estoy aprendiendo 🧠';
+  }
 
 //CALIFICACION
 document.addEventListener("DOMContentLoaded", function() {

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> <!-- Esto hace que la página sea responsive, ajustándose a diferentes tamaños de pantalla-->
+        <meta name="description" content="MAGNIFIQUE es una tenda virtua an la cual se vendera ropa y accesorios para niños y adultos" />
+        <meta name="author" content="D Yurani Mestizo Yule" />
+        <title>Tienda virtual FamilyStyle</title>
+      
+        <!--iconos de redes sociales-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fuentes-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <!-- Bootstrap 5 CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <!--tema diseño-->
+        <link href="css/stylesp.css" rel="stylesheet" />
+        
+    </head>
+    <body id="page-top">
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand" href="#page-top"><img src="assets/img/logos/logoFamilyStyle1.png" alt="......" style="width: 250px; height: 80px;"/></a>
+                <button class="btn-cerrar" onclick="window.history.back()">✖</button>
+
+            </div>
+        </nav>
+        <div class="titulo-pagina text-center">
+          <h1>Chaquetas para Niña</h1>
+        </div>
+        <div class="barra-superior"></div>
+    
+        <!-- contenido... 
+         PRODUCTOS-->
+        <section id="productos" class="py-5 bg-light">
+            <div class="container">
+              <!--seccion del filtro-->
+              <div class="filtro-conjuntos mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <div class="row align-items-end">
+                            <!-- Buscador por nombre/color -->
+                            <div class="col-md-6 mb-3">
+                                <label for="buscar-conjuntos" class="form-label">Buscar producto:</label>
+                                <input type="text" id="buscar-conjuntos" class="form-control" placeholder="gris, beige, azul...">
+                            </div>
+                            
+                            <!-- Filtro por precio -->
+                            <div class="col-md-4 mb-3">
+                                <label for="filtro-precio" class="form-label">Rango de precios:</label>
+                                <select id="filtro-precio" class="form-select">
+                                    <option value="">Todos los precios</option>
+                                    <option value="30-50">$30.000 - $50.000</option>
+                                    <option value="50-100">$50.000 - $100.000</option>
+                                    <option value="100-150">$100.000 - $150.000</option>
+                                </select>
+                            </div>
+                            
+                            <!-- Botón limpiar -->
+                            <div class="col-md-2 mb-3">
+                                <button id="limpiar-filtros" class="btn btn-outline-secondary w-100">
+                                    <i class="fas fa-times"></i> Limpiar
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Contador -->
+                        <div class="text-center mt-2">
+                            <small id="contador-conjuntos" class="text-muted">Mostrando <span id="cantidad-productos">0</span> productos</small>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+          
+              <div class="row">
+                <!-- Fila 1 -->
+                <div class="col-md-3 mb-4" data-nombre ="morado" data-producto-id="chaquetaniña1" data-precio="50.000-100.000">
+                  <div class="card h-100">
+                    <img src="assets/img niña/chaquetas/chaqueta1.jpg" class="card-img-top" alt="Producto 1">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">Chaqueta morada degradada</h5>
+                      <p class="card-text">100% nailon, chaqueta impermeable de color morada degradada</p>
+                      <p class="text-primary fw-bold">$70.000</p>
+                      <button class="btn btn-success" onclick="agregarAlCarrito('Chaqueta impermeable', 'assets/img niña/chaquetas/chaqueta1.jpg', 70.000,'niño')">Agregar al carrito</button>
+                    </div>
+                  </div>
+                </div>
+          
+                <div class="col-md-3 mb-4", data-nombre="rosa" data-producto-id="chaquetaniña2" data-precio="50.000-100.000">
+                  <div class="card h-100">
+                    <img src="assets/img niña/chaquetas/chaqueta2.jpg" class="card-img-top" alt="Producto 2">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">Chaqueta color rosa</h5>
+                      <p class="card-text">100% poliester, chaqueta imperable con botones, no incluye zapatos y bolso</p>
+                      <p class="text-primary fw-bold">$80.900</p>
+                      <button class="btn btn-success" onclick="agregarAlCarrito('chaqueta impermeable', 'assets/img niña/chaquetas/chaqueta2.jpg', 80.900,'niño')">Agregar al carrito</button>
+                    </div>
+                  </div>
+                </div>
+          
+                <div class="col-md-3 mb-4" data-nombre="blanco" data-producto-id="chaquetaniña3" data-precio="50.000-100.000">
+                  <div class="card h-100">
+                    <img src="assets/img niña/chaquetas/chaqueta3.jpg" class="card-img-top" alt="Producto 3">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">Chaqueta color blanco</h5>
+                      <p class="card-text">80% algodos, 20% nailon, chaqueta color blanco.</p>
+                      <p class="text-primary fw-bold">$60.000</p>
+                      <button class="btn btn-success" onclick="agregarAlCarrito('Chaqueta color blanco', 'assets/img niña/chaquetas/chaqueta3.jpg', 60.000,'niño')">Agregar al carrito</button>
+
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-3 mb-4" data-nombre="marron" data-producto-id="chaquetaniña4" data-precio="50.000-100.000">
+                    <div class="card h-100">
+                      <img src="assets/img niña/chaquetas/chaqueta4.jpg" class="card-img-top" alt="Producto 3">
+                      <div class="card-body text-center">
+                        <h5 class="card-title">Chaqueta color marron</h5>
+                        <p class="card-text">80% nailon, 20% algodón, chaqueta con bolsillos</p>
+                        <p class="text-primary fw-bold">$75.000</p>
+                        <button class="btn btn-success" onclick="agregarAlCarrito('Chaqueta color marron', 'assets/img niña/chaquetas/chaqueta4.jpg', 75.000,'niño')">Agregar al carrito</button>
+  
+                      </div>
+                    </div>
+                  </div>
+  
+
+                  <div class="col-md-3 mb-4" data-nombre=" rosa" data-producto-id="chaquetaniña5" data-precio="50.000-100.000">
+                    <div class="card h-100">
+                      <img src="assets/img niña/chaquetas/chaqueta5.jpg" class="card-img-top" alt="Producto 3">
+                      <div class="card-body text-center">
+                        <h5 class="card-title">Chaqueta color rosa</h5>
+                        <p class="card-text">80% nailon, 20% algodos chaqueta rosa con bolsillos y ajustable</p>
+                        <p class="text-primary fw-bold">$75.000</p>
+                        <button class="btn btn-success" onclick="agregarAlCarrito('Chaqueta color rosa ', 'assets/img niña/chaquetas/chaqueta5.jpg', 75.000,'niño')">Agregar al carrito</button>
+  
+                      </div>
+                    </div>
+                  </div>
+  
+            
+            
+                <!-- Fila 2 -->
+                <div class="col-md-3 mb-4", data-nombre="vino" data-producto-id="chaquetaniña6" data-precio="50.000-100.000">
+                    <div class="card h-100">
+                      <img src="assets/img niña/chaquetas/chaqueta6.jpg" class="card-img-top" alt="Producto 3">
+                      <div class="card-body text-center">
+                        <h5 class="card-title">Chaqueta color vino</h5>
+                        <p class="card-text">92% algodon, 8% nailon, chaqueta con bolsillos y botones.</p>
+                        <p class="text-primary fw-bold">$85.000</p>
+                        <button class="btn btn-success" onclick="agregarAlCarrito('Chaqueta color vino', 'assets/img niña/chaquetas/chaqueta6.jpg', 85.000,'niño')">Agregar al carrito</button>
+  
+                      </div>
+                    </div>
+                  </div>
+  
+          
+                  <div class="col-md-3 mb-4" data-nombre=" rosa, negro" data-producto-id="chaquetaniña7" data-precio="50.000-100.000">
+                    <div class="card h-100">
+                      <img src="assets/img niña/chaquetas/chaqueta7.jpg" class="card-img-top" alt="Producto 3">
+                      <div class="card-body text-center">
+                        <h5 class="card-title">Saco color rosa/negro</h5>
+                        <p class="card-text">100% algodón.</p>
+                        <p class="text-primary fw-bold">$55.000</p>
+                        <button class="btn btn-success" onclick="agregarAlCarrito('Saco color rosa/negro', 'assets/img niña/chaquetas/chaqueta7.jpg', 55.000,'niño')">Agregar al carrito</button>
+  
+                      </div>
+                    </div>
+                  </div>
+  
+                  <div class="col-md-3 mb-4" data-nombre="rosa" data-producto-id="chaquetaniña8" data-precio="50.000-100.000">
+                    <div class="card h-100">
+                      <img src="assets/img niña/chaquetas/chaqueta8.jpg" class="card-img-top" alt="Producto 3">
+                      <div class="card-body text-center">
+                        <h5 class="card-title">Saco color rosa</h5>
+                        <p class="card-text">100% algodón, saco rosa con bolsillos.</p>
+                        <p class="text-primary fw-bold">$50.000</p>
+                        <button class="btn btn-success" onclick="agregarAlCarrito('saco rosa', 'assets/img niña/chaquetas/chaqueta8.jpg', 50.000,'niño')">Agregar al carrito</button>
+                      </div>
+                    </div>
+                  </div>
+  
+          </section>
+          
+          <a href="carrito.html" class="boton-carrito">
+            🛒
+          </a>  
+            
+       </head>
+  <!-- Botón para calificar -->
+<button class="btn btn-outline-primary btn-sm mt-2" onclick="toggleRating('${productoId}')">
+  Calificar este producto
+</button>
+  <!-- Botón flotante del chatbot -->
+  <button id="chatbot-toggle">💬</button>
+  
+  <!-- Ventana del chatbot -->
+  <div id="chatbot-box" style="display: none;">
+    <div id="chatbot-header">Asistente</div>
+    <div id="chatbot-messages"></div>
+    <input type="text" id="chatbot-input" placeholder="Escribe algo..." />
+  </div>
+  
+  <script src="productos.js"></script>
+  
+  
+      </body>
+  </html>

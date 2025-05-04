@@ -1,0 +1,72 @@
+/* Asegúrate de que el fondo oscuro esté aplicado */
+#mainNav {
+    background-color: #1e1f21; /* tono oscuro similar al de la imagen */
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  
+  /* Logo más pequeño y ajustado */
+  .logo-familystyle {
+    width: 180px;  /* puedes ajustar este tamaño */
+    height: auto;
+  }
+  .btn-cerrar {
+    position: fixed;
+    top: 20px;             /* Espacio desde arriba */
+    right: 20px;           /* 📍 Aparece a la derecha */
+    background: transparent;
+    border: none;
+    font-size: 28px;
+    color: rgb(209, 208, 208);          /* Puedes cambiar a otro color */
+    cursor: pointer;
+    z-index: 9999;         /* Siempre encima */
+    transition: color 0.3s ease;
+  }
+
+   /* pagina*/
+ 
+   .titulo-pagina {
+    font: 1em sans-serif;
+    background-color: #ffffff;
+    padding: 20px 0;
+    position: relative;
+    z-index: 10;
+    margin-top: 100px; /* ajusta según la altura de tu navbar */
+  }
+  
+  .titulo-pagina h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #000000;
+  }
+ /* Estilos para el botón del usuario en el carrito */
+.boton-usuario-superior {
+    position: fixed;
+    top: 90px; /* Alineado debajo del navbar */
+    right: 30px;
+    background-color: #ffffff;
+    padding: 10px 14px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.15);
+    display: none;
+    z-index: 1050;
+    font-size: 14px;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  /* Botón de cerrar sesión */
+  .btn-cerrar-sesion {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+  
+  .btn-cerrar-sesion:hover {
+    background-color: #b02a37;
+  }
+  

@@ -28,43 +28,9 @@
             <div class="titulo-pagina text-center">
                 <h1>PRODUCTOS</h1>
                 <h3>Estos son los roductos que ofrecemos</h3>
-            <!-- 👇 Aquí está tu barra agregada  -->
+            
             <div class="barra-superior"></div>
 
-            <!-- Seccion de filtro -->
-
-        <div class="container mb-4">
-            <div class="row" >
-              <div class="col-md-4">
-                <label for="filtroCategoria">Categoría:</label>
-                <select id="filtroCategoria" class="form-control">
-                  <option value="">Todas</option>
-                  <option value="niño">Niño</option>
-                  <option value="niña">Niña</option>
-                  <option value="dama">Dama</option>
-                  <option value="caballero">Caballero</option>
-                  <option value="accesorios">Accesorios</option>
-                </select>
-              </div>
-          
-              <div class="col-md-4 ">
-                <label for="filtroPrecio">Precio:</label>
-                <select id="filtroPrecio" class="form-control">
-                  <option value="">Todos</option>
-                  <option value="menor50">Menor a $50.000</option>
-                  <option value="entre50y100">Entre $50.000 y $100.000</option>
-                  <option value="mayor100">Mayor a $100.000</option>
-                </select>
-              </div>
-            </div>
-          
-            <!-- Botón alineado a la derecha al centro -->
-            <div class="row mt-3">
-              <div class="col text-center">
-                <button class="btn btn-secondary btn-limpiar">Limpiar filtros</button>
-              </div>
-            </div>
-          </div>
         <!-- Seccion de productos-->
         <section class="page-section bg-light" id="portfolio">
             <div class="container">
@@ -84,7 +50,7 @@
                     <div class="col-lg-3 col-sm-6 mb-4">
                         <!-- Producto 2 ropa bebe niña-->
                         <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="bb_niña.html">
                                 <img class="img-fluid" src="assets/img/portfolio/niña.jpeg" alt="..." style="width: 330px; height: 380px;"/>
                             </a>
                             <div class="portfolio-caption">
@@ -109,7 +75,7 @@
             <div class="col-lg-3 col-sm-6 mb-4">
                 <!-- Producto 2 ropa niña-->
                 <div class="portfolio-item">
-                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
+                    <a class="portfolio-link" data-bs-toggle="modal" href="productosNiña.html">
                         <img class="img-fluid" src="assets/img/portfolio/niña1.jpg" alt="..." style="width: 330px; height: 380px;"/>
                     </a>
                     <div class="portfolio-caption">
@@ -145,11 +111,11 @@
             <div class="col-lg-3 col-sm-6 mb-4">
                 <!-- Producto 5 ACCESORIOS HOMBRE-->
                 <div class="portfolio-item">
-                    <a class="portfolio-link" data-bs-toggle="modal" href="">
+                    <a class="portfolio-link" data-bs-toggle="modal" href="accesoriosMujer.html">
                         <img class="img-fluid" src="assets/img/portfolio/acces mujer.jpeg" alt="..." style="width: 330px; height: 380px;"/>
                     </a>
                     <div class="portfolio-caption">
-                        <h5 class="card-title">Acesorios Hombre</h5>
+                        <h5 class="card-title">Acesorios Mujer</h5>
                         <div class="portfolio-caption-subheading text-muted">Aqui encontraras gran variedad de acceesorios, escoge el que mas te guste</div>
                     </div>
                 </div>
@@ -169,3 +135,23 @@
         </div>
     </div>
 </section>
+<a href="carrito.html" class="boton-carrito">
+    🛒
+  </a>  
+    
+</head>
+ <!-- Botón flotante del chatbot -->
+ <button id="chatbot-toggle">💬</button>
+  
+ <!-- Ventana del chatbot -->
+ <div id="chatbot-box" style="display: none;">
+   <div id="chatbot-header">Asistente</div>
+   <div id="chatbot-messages"></div>
+   <input type="text" id="chatbot-input" placeholder="Escribe algo..." />
+ </div>
+ 
+ <script src="productos.js"></script>
+ 
+ 
+     </body>
+ </html>

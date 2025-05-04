@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> <!-- Esto hace que la página sea responsive, ajustándose a diferentes tamaños de pantalla-->
+        <meta name="description" content="MAGNIFIQUE es una tenda virtua an la cual se vendera ropa y accesorios para niños y adultos" />
+        <meta name="author" content="D Yurani Mestizo Yule" />
+        <title>Tienda virtual FamilyStyle</title>
+      
+        <!--iconos de redes sociales-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fuentes-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <!-- Bootstrap 5 CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <!--tema diseño-->
+        <link href="css/stylesp.css" rel="stylesheet" />
+        
+    </head>
+    <body id="page-top">
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand" href="#page-top"><img src="assets/img/logos/logoFamilyStyle1.png" alt="......" style="width: 250px; height: 80px;"/></a>
+                <button class="btn-cerrar" onclick="window.history.back()">✖</button>
+
+            </div>
+        </nav>
+        <div class="titulo-pagina text-center">
+          <h1>Medias para Bebe niña</h1>
+        </div>
+        <div class="barra-superior"></div>
+    
+        <!-- contenido... 
+         PRODUCTOS-->
+        <section id="productos" class="py-5 bg-light">
+            <div class="container">
+              <!--seccion del filtro-->
+              <div class="filtro-conjuntos mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <div class="row align-items-end">
+                            <!-- Buscador por nombre/color -->
+                            <div class="col-md-6 mb-3">
+                                <label for="buscar-conjuntos" class="form-label">Buscar producto:</label>
+                                <input type="text" id="buscar-conjuntos" class="form-control" placeholder="gris, beige, azul...">
+                            </div>
+                            
+                            <!-- Filtro por precio -->
+                            <div class="col-md-4 mb-3">
+                                <label for="filtro-precio" class="form-label">Rango de precios:</label>
+                                <select id="filtro-precio" class="form-select">
+                                    <option value="">Todos los precios</option>
+                                    <option value="30-50">$5.000 - $10.000</option>
+                                    <option value="50-100">$10.000 - $20.000</option>
+                                </select>
+                            </div>
+                            
+                            <!-- Botón limpiar -->
+                            <div class="col-md-2 mb-3">
+                                <button id="limpiar-filtros" class="btn btn-outline-secondary w-100">
+                                    <i class="fas fa-times"></i> Limpiar
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Contador -->
+                        <div class="text-center mt-2">
+                            <small id="contador-conjuntos" class="text-muted">Mostrando <span id="cantidad-productos">0</span> productos</small>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+          
+              <div class="row">
+                <!-- Fila 1 -->
+                <div class="col-md-3 mb-4" data-nombre ="blanco, rosa" data-producto-id="mediasbbniña1" data-precio="10.000-20.000">
+                  <div class="card h-100">
+                    <div class="sticker">¡Oferta!</div>
+                    <img src="assets/bebeNiña/mediasbbniña/media1.jpg" class="card-img-top" alt="Producto 1">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">Set de 5 medias</h5>
+                      <p class="card-text">85% algodón, 12% poliamida, 3 de elastano. Set de 5 medias en color rosa y blanco</p>
+                      <p class="text-primary fw-bold">$12.000</p>
+                      <button class="btn btn-success" onclick="agregarAlCarrito('Set de 5 medias', 'assets/bebeNiña/mediasbbniña/media1.jpg', 12.000,'bebé')">Agregar al carrito</button>
+                    </div>
+                  </div>
+                </div>
+          
+                <div class="col-md-3 mb-4", data-nombre="blanco" data-producto-id="mediasbbniña2" data-precio="5.000-100.000">
+                  <div class="card h-100">
+                    <img src="assets/bebeNiña/mediasbbniña/media2.jpg" class="card-img-top" alt="Producto 2">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">Par de medias color blanco</h5>
+                      <p class="card-text">85% algodón, 12% poliamida, 3 de elastano. par de medias color blanco</p>
+                      <p class="text-primary fw-bold">$5.000</p>
+                      <button class="btn btn-success" onclick="agregarAlCarrito('par de medias blancas', 'assets/bebeNiña/mediasbbniña/media2.jpg', 5.000,'bebé')">Agregar al carrito</button>
+                    </div>
+                  </div>
+                </div>
+          
+                <div class="col-md-3 mb-4" data-producto-id="mediasbbniña3" data-nombre="negro, blanco, azul, beige, rosa" data-precio="10.000-15.000">
+                  <div class="card h-100">
+                    <div class="sticker">¡Oferta!</div>
+                    <img src="assets/bebeNiña/mediasbbniña/media3.jpg" class="card-img-top" alt="Producto 3">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">Set de 5 medias</h5>
+                      <p class="card-text">60% algodón, 35% poliester y 5% elastano, set de 5 medias en colores diferentes.</p>
+                      <p class="text-primary fw-bold">12.000</p>
+                      <button class="btn btn-success" onclick="agregarAlCarrito('Set de 5 medias', 'assets/bebeNiña/mediasbbniña/media3.jpg', 12.000,'bebé')">Agregar al carrito</button>
+
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-3 mb-4" data-nombre="beige, blanco" data-producto-id="mediasbbniña4" data-precio="5.000-10.000">
+                    <div class="card h-100">
+                        <div class="sticker">¡Oferta!</div>
+                      <img src="assets/bebeNiña/mediasbbniña/media4.jpg" class="card-img-top" alt="Producto 3">
+                      <div class="card-body text-center">
+                        <h5 class="card-title">Set de 5 medias</h5>
+                        <p class="card-text">60% algodón, 35% poliester y 5% elastano, set de 5 medias en diferentes colores</p>
+                        <p class="text-primary fw-bold">$10.000</p>
+                        <button class="btn btn-success" onclick="agregarAlCarrito('Set de 5 medias', 'assets/bebeNiña/mediasbbniña/media4.jpg', 10.000,'bebé')">Agregar al carrito</button>
+  
+                      </div>
+                    </div>
+                  </div>
+
+                <!-- Fila 2 -->
+
+                  <div class="col-md-3 mb-4" data-nombre=" rosa, marron" data-producto-id="mediasbbniña5" data-precio="5.000-10.000">
+                    <div class="card h-100">
+                        <div class="sticker">¡Oferta!</div>
+                      <img src="assets/bebeNiña/mediasbbniña/media5.jpg" class="card-img-top" alt="Producto 3">
+                      <div class="card-body text-center">
+                        <h5 class="card-title">Set de 3 medias</h5>
+                        <p class="card-text">60% algodón, 35% poliester y 5% elastan. </p>
+                        <p class="text-primary fw-bold">$5.000</p>
+                        <button class="btn btn-success" onclick="agregarAlCarrito('Jean azul', 'assets/bebeNiña/mediasbbniña/media5.jpg', 65.000,'bebé')">Agregar al carrito</button>
+  
+                      </div>
+                    </div>
+                  </div>
+  
+                       
+            
+                <div class="col-md-3 mb-4", data-nombre="rosa" data-producto-id="mediasbbniña6" data-precio="5.000-10.000">
+                    <div class="card h-100">
+                      <img src="assets/bebeNiña/mediasbbniña/media6.jpg" class="card-img-top" alt="Producto 3">
+                      <div class="card-body text-center">
+                        <h5 class="card-title">Par de medias en color rosa</h5>
+                        <p class="card-text">60% algodón, 35% poliester y 5% elastan.</p>
+                        <p class="text-primary fw-bold">$5.000</p>
+                        <button class="btn btn-success" onclick="agregarAlCarrito('Camisa color azul', 'assets/bebeNiña/mediasbbniña/media6.jpg', 30.000,'bebé')">Agregar al carrito</button>
+  
+                      </div>
+                    </div>
+                  </div>
+  
+          
+                  <div class="col-md-3 mb-4" data-nombre=" rosa" data-precio="5.000-10.000" data-producto-id="mediasbbniña7">
+                    <div class="card h-100">
+                      <img src="assets/bebeNiña/mediasbbniña/media7.jpg" class="card-img-top" alt="Producto 3">
+                      <div class="card-body text-center">
+                        <h5 class="card-title">Par de Medias en color rosa </h5>
+                        <p class="card-text">60% algodón, 35% poliester y 5% elastan.</p>
+                        <p class="text-primary fw-bold">$5.000</p>
+                        <button class="btn btn-success" onclick="agregarAlCarrito('Par de medias', 'assets/bebeNiña/mediasbbniña/media7.jpg', 55.000,'bebé')">Agregar al carrito</button>
+  
+                      </div>
+                    </div>
+                  </div>
+  
+                  <div class="col-md-3 mb-4" data-nombre="morado" data-producto-id="mediasbbniña8" data-precio="5.000-10.000">
+                    <div class="card h-100">
+                      <img src="assets/bebeNiña/mediasbbniña/media8.jpg" class="card-img-top" alt="Producto 3">
+                      <div class="card-body text-center">
+                        <h5 class="card-title">Par de medias</h5>
+                        <p class="card-text">60% algodón, 35% poliester y 5% elastan. par de medias en color morado.</p>
+                        <p class="text-primary fw-bold">$5.000</p>
+                        <button class="btn btn-success" onclick="agregarAlCarrito('Par de medias moradas', 'assets/bebeNiña/mediasbbniña/media8.jpg', 5.000,'bebé')">Agregar al carrito</button>
+                      </div>
+                    </div>
+                  </div>
+  
+          </section>
+          <a href="carrito.html" class="boton-carrito">
+            🛒
+          </a>  
+            
+       </head>
+  
+  <!-- Botón flotante del chatbot -->
+  <button id="chatbot-toggle">💬</button>
+  
+  <!-- Ventana del chatbot -->
+  <div id="chatbot-box" style="display: none;">
+    <div id="chatbot-header">Asistente</div>
+    <div id="chatbot-messages"></div>
+    <input type="text" id="chatbot-input" placeholder="Escribe algo..." />
+  </div>
+  <!-- funciones -->
+  <script src="productos.js"></script>
+  
+      </body>
+  </html>
