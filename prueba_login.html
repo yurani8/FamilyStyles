@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> <!-- Esto hace que la página sea responsive, ajustándose a diferentes tamaños de pantalla-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/stylesp.css" rel="stylesheet" />
+  <style>
+    .card {
+      width: 350px;
+    }
+    .social-login button {
+      width: 100%;
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body class="d-flex align-items-center justify-content-center vh-100">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><img src="assets/img/logos/logoFamilyStyle1.png" alt="......" style="width: 250px; height: 80px;"/></a>
+            <button class="btn-cerrar" onclick="window.history.back()">✖</button>
+    
+        </div>
+    </nav>
+
+  <div class="card p-4 shadow">
+    <div class="accordion" id="loginRegistroAccordion">
+      
+      <!-- LOGIN -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="loginHeading">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#loginForm" aria-expanded="true" aria-controls="loginForm">
+            Iniciar Sesión
+          </button>
+        </h2>
+        <div id="loginForm" class="accordion-collapse collapse show" aria-labelledby="loginHeading" data-bs-parent="#loginRegistroAccordion">
+          <div class="accordion-body">
+            <form onsubmit="iniciarSesion(event)">
+              <div class="mb-3">
+                <input type="text" class="form-control" id="usuario" placeholder="Usuario o Correo" required>
+              </div>
+              <div class="mb-3">
+                <input type="password" class="form-control" id="password" placeholder="Contraseña" required>
+              </div>
+              <div class="text-end mb-3">
+                <a href="#" class="small" onclick="mostrarRecuperacion()">¿Olvidaste tu contraseña?</a>
+              </div>              
+              <button type="submit" class="btn btn-primary w-100 mb-2">Ingresar</button>
+              
+
+              <div class="text-center small mb-2">o continuar con</div>
+              <div class="social-login">
+                <button type="button" class="btn btn-outline-danger">Google</button>
+                <button type="button" class="btn btn-outline-primary">Facebook</button>
+              </div>
+
+              <div class="text-center mt-2">
+                ¿No tienes cuenta? <a href="#" data-bs-toggle="collapse" data-bs-target="#registroForm" aria-expanded="false" aria-controls="registroForm">Regístrate</a>
+              </div>
+            </form>
+            <form id="formRecuperar" class="d-none" onsubmit="recuperarClave(event)">
+                <h5 class="text-center mb-3">Recuperar contraseña</h5>
+                <div class="mb-3">
+                  <input type="email" class="form-control" id="correoRecuperar" placeholder="Correo registrado" required>
+                </div>
+                <button type="submit" class="btn btn-warning w-100 mb-3">Verificar correo</button>
+                <button type="button" class="btn btn-secondary w-100" onclick="volverAlLogin()">Cancelar</button> <!--volver al login-->
+
+            </form>
+              
+            <form id="formNuevaPassword" class="d-none" onsubmit="cambiarPassword(event)">
+                <h5 class="text-center mb-3">Nueva contraseña</h5>
+                <div class="mb-3 position-relative">
+                  <input type="password" class="form-control" id="nuevaPasswordRecuperar" placeholder="Nueva contraseña" required minlength="6">
+                  <button type="button" class="btn btn-sm btn-outline-secondary position-absolute top-0 end-0 mt-2 me-2" onclick="togglePassword('nuevaPasswordRecuperar')">👁</button>
+                </div>
+                <div class="mb-3">
+                  <input type="password" class="form-control" id="confirmarPasswordRecuperar" placeholder="Confirmar contraseña" required>
+                </div>
+                <button type="submit" class="btn btn-success w-100">Guardar contraseña</button>
+                <button type="button" class="btn btn-secondary w-100 mt-2" onclick="volverAlLogin()">Cancelar</button>
+
+            </form>              
+          </div>
+        </div>
+      </div>
+
+      <!-- REGISTRO -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="registroHeading">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#registroForm" aria-expanded="false" aria-controls="registroForm">
+            Registro
+          </button>
+        </h2>
+        <div id="registroForm" class="accordion-collapse collapse" aria-labelledby="registroHeading" data-bs-parent="#loginRegistroAccordion">
+          <div class="accordion-body">
+            <form onsubmit="registrarUsuario(event)">
+              <div class="mb-3">
+                <input type="text" class="form-control" id="nuevoUsuario" placeholder="Usuario" required>
+              </div>
+              <div class="mb-3">
+                <input type="email" class="form-control" id="nuevoCorreo" placeholder="Correo electrónico" required>
+              </div>
+              <div class="mb-3">
+                <input type="password" class="form-control" id="nuevaPassword" placeholder="Contraseña" required>
+              </div>
+              <button type="submit" class="btn btn-success w-100">Registrarse</button>
+
+              <div class="text-center mt-2">
+                ¿Ya tienes cuenta? <a href="#" data-bs-toggle="collapse" data-bs-target="#loginForm" aria-expanded="true" aria-controls="loginForm">Iniciar sesión</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    
+  </div>
+
+  <script src="login.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

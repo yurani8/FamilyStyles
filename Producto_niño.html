@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="MAGNIFIQUE es una tenda virtua an la cual se vendera ropa y accesorios para niños y adultos" />
+        <meta name="author" content="D Yurani Mestizo Yule" />
+        <title>Tienda virtual FamilyStyle</title>
+      
+        <!--iconos de redes sociales-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fuentes-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <!-- Bootstrap 5 CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!--tema diseño-->
+        <link href="css/stylesp.css" rel="stylesheet" />
+       
+    </head>
+    <body id="page-top">
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand" href="index.html"><img src="assets/img/logos/logoFamilyStyle1.png" alt="......" style="width: 250px; height: 80px;"/></a>
+                <button class="btn-cerrar" onclick="window.history.back()">✖</button>
+            </div>
+        </nav>
+        <div class="titulo-pagina text-center">
+        <h1>Bienvenido a la Seccion de Niño</h1>
+        <!-- 👇 Aquí está tu barra agregada  -->
+        <div class="barra-superior"></div>
+    
+        <!-- Sección de Productos Niño -->
+        <section id="productos" class="py-5 bg-light">
+            <!-- Seccion del filtro -->
+            <div class="container">
+                
+                <div class="filtro-container">
+                    <div class="row justify-content-center">
+                        <div class="col-md-6 ">
+                            <div class="card-shadow-sm">
+                                <div class="card-body text-center">
+                                    <label for="filtro-categoria" class="form-label">filtrar por cateroria:</label>
+                                    <div class="input-group">
+                                        <select id="filtro-categoria" class="form-select">
+                                            <option value="">Todas las categorías</option>
+                                            <option value="conjuntos">Conjuntos</option>
+                                            <option value="camisetas">Camisetas</option>
+                                            <option value="pantalones">Pantalones</option>
+                                            <option value="jeans">Jeans</option>
+                                            <option value="medias">Medias</option>
+                                            <option value="pijamas">Pijamas</option>
+                                        </select>
+                                        <button id="reset-filtros" class="btn btn-outline-secondary w-100">Limpiar</button>
+                                            <i class="fas fa-undo"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="contador-productos" class="text-muted text-center mt-2">Mostrando 6 categorías</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row" id="contenedor-productos">
+                    <!-- Conjuntos -->
+                    <div class="col-md-3 mb-4 producto" data-categoria="conjuntos" data-nombre="conjuntos niño">
+                        <a href="conjuntos_niño.html" class="text-decoration-none text-dark">
+                            <div class="card h-100">
+                                <img src="assets/img niño/conjunto1.jpeg" class="card-img-top" alt="Conjuntos Niño">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Conjuntos</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <!-- Camisetas -->
+                    <div class="col-md-3 mb-4 producto" data-categoria="camisetas" data-nombre="camisetas niño">
+                        <a href="camisetas_niño.html" class="text-decoration-none text-dark">
+                            <div class="card h-100">
+                                <img src="assets/img niño/camisetas1.jpeg" class="card-img-top" alt="Camisetas Niño">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Camisetas</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <!-- Pantalones -->
+                    <div class="col-md-3 mb-4 producto" data-categoria="pantalones" data-nombre="pantalones niño">
+                        <a href="pantalones_niño.html" class="text-decoration-none text-dark">
+                            <div class="card h-100">
+                                <img src="assets/img niño/pantalon1.jpeg" class="card-img-top" alt="Pantalones Niño">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Pantalones</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <!-- Jeans -->
+                    <div class="col-md-3 mb-4 producto" data-categoria="jeans" data-nombre="jeans niño">
+                        <a href="jeans_niño.html" class="text-decoration-none text-dark">
+                            <div class="card h-100">
+                                <img src="assets/img niño/jean1.jpeg" class="card-img-top" alt="Jeans Niño">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Jeans</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <!-- Medias -->
+                    <div class="col-md-3 mb-4 producto" data-categoria="medias" data-nombre="medias niño">
+                        <a href="medias_niño.html" class="text-decoration-none text-dark">
+                            <div class="card h-100">
+                                <img src="assets/img/productos/ropa3.jpg" class="card-img-top" alt="Medias Niño">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Medias</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <!-- Pijamas -->
+                    <div class="col-md-3 mb-4 producto" data-categoria="pijamas" data-nombre="pijamas niño">
+                        <a href="pijamas_niño.html" class="text-decoration-none text-dark">
+                            <div class="card h-100">
+                                <img src="assets/img niño/pijama1.jpeg" class="card-img-top" alt="Pijamas Niño">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Pijamas</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <a href="carrito.html" class="boton-carrito">
+            🛒
+          </a>  
+            
+       </head>
+  
+  <!-- Botón flotante del chatbot -->
+  <button id="chatbot-toggle">💬</button>
+  
+  <!-- Ventana del chatbot -->
+  <div id="chatbot-box" style="display: none;">
+    <div id="chatbot-header">Asistente</div>
+    <div id="chatbot-messages"></div>
+    <input type="text" id="chatbot-input" placeholder="Escribe algo..." />
+  </div>
+  
+  <script src="secciones.js"></script>
+  
+      </body>
+  </html>

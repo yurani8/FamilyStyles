@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> <!-- Esto hace que la página sea responsive, ajustándose a diferentes tamaños de pantalla-->
+        <meta name="description" content="MAGNIFIQUE es una tenda virtua an la cual se vendera ropa y accesorios para niños y adultos" />
+        <meta name="author" content="D Yurani Mestizo Yule" />
+        <title>Tienda virtual FamilyStyle</title>
+      
+        <!--iconos de redes sociales-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fuentes-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <!-- Bootstrap 5 CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <!--tema diseño-->
+        <link href="css/stylesp.css" rel="stylesheet" />
+        
+    </head>
+    <body id="page-top">
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand" href="index.html"><img src="assets/img/logos/logoFamilyStyle1.png" alt="......" style="width: 250px; height: 80px;"/></a>
+                <button class="btn-cerrar" onclick="window.history.back()">✖</button>
+
+            </div>
+        </nav>
+        <div class="titulo-pagina text-center">
+          <h1>Conjuntos Caballero</h1>
+        </div>
+        <div class="barra-superior"></div>
+    
+        <!-- contenido... 
+         PRODUCTOS-->
+        <section id="productos" class="py-5 bg-light">
+            <div class="container">
+              <!--seccion del filtro-->
+              <div class="filtro-conjuntos mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <div class="row align-items-end">
+                            <!-- Buscador por nombre/color -->
+                            <div class="col-md-6 mb-3">
+                                <label for="buscar-conjuntos" class="form-label">Buscar producto:</label>
+                                <input type="text" id="buscar-conjuntos" class="form-control" placeholder="gris, beige, cafe, blanco, azul, rosa...">
+                            </div>
+                            
+                            <!-- Filtro por precio -->
+                            <div class="col-md-4 mb-3">
+                                <label for="filtro-precio" class="form-label">Rango de precios:</label>
+                                <select id="filtro-precio" class="form-select">
+                                    <option value="">Todos los precios</option>
+                                    <option value="30-40">$30.000 - $40.000</option>
+                                    <option value="41-50">$41.000 - $50.000</option>
+                                    <option value="51-60">$51.000 - $60.000</option>
+                                    <option value="m"> Precio Mayor </option>
+
+                                    
+                                    
+                                </select>
+                            </div>
+                            
+                            <!-- Botón limpiar -->
+                            <div class="col-md-2 mb-3">
+                                <button id="limpiar-filtros" class="btn btn-outline-secondary w-100">
+                                    <i class="fas fa-times"></i> Limpiar
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Contador -->
+                        <div class="text-center mt-2">
+                            <small id="contador-conjuntos" class="text-muted">Mostrando <span id="cantidad-productos">0</span> productos</small>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+          
+              <div class="row">
+                <!-- Fila 1 -->
+                <div class="col-md-3 mb-4" data-producto-id="gorroC1" data-nombre ="gris" data-precio="30.000-40.000">
+                  <div class="card h-100">
+                    <div class="sticker">¡Oferta!</div>
+                    <img src="assets/accesoriosH/gorrosHombre/gorroH2.jpg" class="card-img-top" alt="Producto 1">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">Gray Knit Beanie</h5>
+                      <p class="card-text">Un gorro de punto gris con textura tejida y un diseño holgado para un ajuste cómodo y moderno. </p>
+                      <p class="text-primary fw-bold">$40.000</p>
+                      <button class="btn btn-success" onclick="agregarAlCarrito('Gray Knit Beanie', 'assets/accesoriosH/gorrosHombre/gorroH2.jpg', 65.000,'adulto')">Agregar al carrito</button>
+                    </div>
+                  </div>
+                </div>
+          
+                <div class="col-md-3 mb-4", data-producto-id="gorro2" data-nombre="verde" data-precio="61.000-70.000">
+                  <div class="card h-100">
+                    <img src="assets/accesoriosH/gorrosHombre/gorroH2.jpg" class="card-img-top" alt="Producto 2">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">K. Kapor Expedition</h5>
+                      <p class="card-text">Gorra tipo béisbol en verde oscuro, con un parche frontal distintivo que resalta el espíritu deportivo y aventurero. </p>
+                      <p class="text-primary fw-bold">$48.000</p>
+                      <button class="btn btn-success" onclick="agregarAlCarrito('K. Kapor Expedition', 'assets/accesoriosH/gorrosHombre/gorroH2.jpg', 65.000,'adulto')">Agregar al carrito</button>
+                    </div>
+                  </div>
+                </div>
+          
+                <div class="col-md-3 mb-4" data-producto-id="gorroC3" data-nombre="negro, marron, blanco" data-precio="m">
+                  <div class="card h-100">
+                    <div class="sticker">¡Oferta!</div>
+                    <img src="assets/accesoriosH/gorrosHombre/gorroH3.jpg" class="card-img-top" alt="Producto 3">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">Trilogía Urbana</h5>
+                      <p class="card-text">Un set de tres gorras en tonos negro, marrón y blanco, cada una con un diseño versátil y moderno.</p>
+                      <p class="text-primary fw-bold">$98.000</p>
+                      <button class="btn btn-success" onclick="agregarAlCarrito('Trilogía Urbana', 'assets/accesoriosH/gorrosHombre/gorroH3.jpg', 98.000,'adulto')">Agregar al carrito</button>
+
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-3 mb-4" data-producto-id="gorroC4" data-nombre="azul" data-precio="51.000-60.000">
+                  <div class="card h-100">
+                    <div class="sticker">¡Oferta!</div>
+                    <img src="assets/accesoriosH/gorrosHombre/gorroH4.jpg" class="card-img-top" alt="Producto 4">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">Stellar Knit</h5>
+                      <p class="card-text">Un gorro tejido negro con textura de surcos diagonales, resaltado por un pequeño emblema de estrella en la etiqueta lateral.</p>
+                      <p class="text-primary fw-bold">$54.000</p>
+                      <button class="btn btn-success" onclick="agregarAlCarrito('Stellar Knit', 'assets/accesoriosH/gorrosHombre/gorroH4.jpg', 54.000,'adulto')">Agregar al carrito</button>
+
+                    </div>
+                  </div>
+                </div>
+                  
+                <!-- Fila 2 -->
+                
+                <div class="col-md-3 mb-4" data-producto-id="gorroC5" data-nombre="negro" data-precio="41.000-50.000">
+                  <div class="card h-100">
+                    <img src="assets/accesoriosH/gorrosHombre/gorroH5.jpg" class="card-img-top" alt="Producto 5">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">Astralis Knit</h5>
+                      <p class="card-text">Gorro tejido negro con un diseño minimalista y un pequeño bordado en el frente</p>
+                      <p class="text-primary fw-bold">$41.000</p>
+                      <button class="btn btn-success" onclick="agregarAlCarrito('Astralis Knit', 'assets/accesoriosH/gorrosHombre/gorroH5.jpg', 41.000,'adulto')">Agregar al carrito</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 mb-4", data-producto-id="gorroC6" data-nombre="beige" data-precio="41.000-50.000">
+                  <div class="card h-100">
+                    <img src="assets/accesoriosH/gorrosHombre/gorroH6.jpg" class="card-img-top" alt="Producto 6">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">Sable Dune</h5>
+                      <p class="card-text">Un elegante sombrero bucket en tono beige con el distintivo bordado de "JACQUEMUS". </p>
+                      <p class="text-primary fw-bold">$45.000</p>
+                      <button class="btn btn-success" onclick="agregarAlCarrito('Sable Dune', 'assets/accesoriosH/gorrosHombre/gorroH6.jpg', 45.000,'adulto')">Agregar al carrito</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-3 mb-4" data-producto-id="gorroC7" data-nombre=" negro, beige, cafe" data-precio="51.000-60.000">
+                  <div class="card h-100">
+                    <img src="assets/accesoriosH/gorrosHombre/gorroH7.jpg" class="card-img-top" alt="Producto 7">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">SportStyle 87</h5>
+                      <p class="card-text">Una gorra negra con un diseño moderno y deportivo. Destacada con textos en contraste como "SPORTS FASHION LINE CAP 87"</p>
+                      <p class="text-primary fw-bold">$51.000</p>
+                      <button class="btn btn-success" onclick="agregarAlCarrito('SportStyle 87', 'assets/accesoriosH/gorrosHombre/gorroH7.jpg', 51.000,'adulto')">Agregar al carrito</button>
+
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 mb-4" data-producto-id="gorroC8" data-nombre="beige" data-precio="m">
+                  <div class="card h-100">
+                    <img src="assets/accesoriosH/gorrosHombre/gorroH8.jpg" class="card-img-top" alt="Producto 8">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">Redess Cozy</h5>
+                      <p class="card-text">Un gorro tejido en tono beige con una textura cálida y un interior forrado de suave material, ideal para proteger del frío con estilo. </p>
+                      <p class="text-primary fw-bold">$80.000</p>
+                      <button class="btn btn-success" onclick="agregarAlCarrito('Redess Cozy', 'assets/accesoriosH/gorrosHombre/gorroH8.jpg', 46.000,'adulto')">Agregar al carrito</button>
+                    </div>
+                  </div>
+                </div>
+             </div>
+  
+          </section>
+          
+          <a href="carrito.html" class="boton-carrito">
+            🛒
+          </a>  
+            
+       </head>
+  
+  <!-- Botón para calificar -->
+<button class="btn btn-outline-primary btn-sm mt-2" onclick="toggleRating('${productoId}')">
+  Calificar este producto
+</button>     
+  <!-- Botón flotante del chatbot -->
+  <button id="chatbot-toggle">💬</button>
+  
+  <!-- Ventana del chatbot -->
+  <div id="chatbot-box" style="display: none;">
+    <div id="chatbot-header">Asistente</div>
+    <div id="chatbot-messages"></div>
+    <input type="text" id="chatbot-input" placeholder="Escribe algo..." />
+  </div>
+  
+  <script src="productos.js"></script>
+  
+  
+      </body>
+  </html>

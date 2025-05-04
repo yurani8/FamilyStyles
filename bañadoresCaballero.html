@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> <!-- Esto hace que la página sea responsive, ajustándose a diferentes tamaños de pantalla-->
+        <meta name="description" content="MAGNIFIQUE es una tenda virtua an la cual se vendera ropa y accesorios para niños y adultos" />
+        <meta name="author" content="D Yurani Mestizo Yule" />
+        <title>Tienda virtual FamilyStyle</title>
+      
+        <!--iconos de redes sociales-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fuentes-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <!-- Bootstrap 5 CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <!--tema diseño-->
+        <link href="css/stylesp.css" rel="stylesheet" />
+        
+    </head>
+    <body id="page-top">
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand" href="index.html"><img src="assets/img/logos/logoFamilyStyle1.png" alt="......" style="width: 250px; height: 80px;"/></a>
+                <button class="btn-cerrar" onclick="window.history.back()">✖</button>
+
+            </div>
+        </nav>
+        <div class="titulo-pagina text-center">
+          <h1>Pantalonetas de baño Caballero</h1>
+        </div>
+        <div class="barra-superior"></div>
+    
+        <!-- contenido... 
+         PRODUCTOS-->
+        <section id="productos" class="py-5 bg-light">
+            <div class="container">
+              <!--seccion del filtro-->
+              <div class="filtro-conjuntos mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <div class="row align-items-end">
+                            <!-- Buscador por nombre/color -->
+                            <div class="col-md-6 mb-3">
+                                <label for="buscar-conjuntos" class="form-label">Buscar producto:</label>
+                                <input type="text" id="buscar-conjuntos" class="form-control" placeholder="gris, beige, negro, blanco, azul, rosa, verde, naranja...">
+                            </div>
+                            
+                            <!-- Filtro por precio -->
+                            <div class="col-md-4 mb-3">
+                                <label for="filtro-precio" class="form-label">Rango de precios:</label>
+                                <select id="filtro-precio" class="form-select">
+                                    <option value="">Todos los precios</option>
+                                    <option value="30-40">$30.000 - $40.000</option>
+                                    <option value="41-50">$41.000 - $50.000</option>
+                                    <option value="51-60">$51.000 - $60.000</option>
+                                    <option value="61-70">$61.000 - $70.000</option>
+                                    <option value="71-80">$71.000 - $80.000</option>
+                                    <option value="81-90">$81.000 - $90.000</option>
+                                   
+                                </select>
+                            </div>
+                            
+                            <!-- Botón limpiar -->
+                            <div class="col-md-2 mb-3">
+                                <button id="limpiar-filtros" class="btn btn-outline-secondary w-100">
+                                    <i class="fas fa-times"></i> Limpiar
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Contador -->
+                        <div class="text-center mt-2">
+                            <small id="contador-conjuntos" class="text-muted">Mostrando <span id="cantidad-productos">0</span> productos</small>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+          
+              <div class="row">
+                <!-- Fila 1 -->
+                <div class="col-md-3 mb-4" data-producto-id="bañadorC1" data-nombre ="azul" data-precio="30.000-40.000">
+                  <div class="card h-100">
+                    <img src="assets/caballero/trajedebañoCaballero/bañoC1.jpg" class="card-img-top" alt="Producto 1">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">Pantaloneta marina</h5>
+                      <p class="card-text">Bañador masculino en color azul marino, con estampado de pequeños iconos marino</p>
+                      <p class="text-primary fw-bold">$38.000</p>
+                      <button class="btn btn-success" onclick="agregarAlCarrito('Pantaloneta marina', 'assets/caballero/trajedebañoCaballero/bañoC1.jpg', 38.000,'adulto')">Agregar al carrito</button>
+                    </div>
+                  </div>
+                </div>
+          
+                <div class="col-md-3 mb-4", data-producto-id="bañadorC2" data-nombre="azul, negro" data-precio="41.000-50.000">
+                  <div class="card h-100">
+                    <img src="assets/caballero/trajedebañoCaballero/bañoC2.jpg" class="card-img-top" alt="Producto 2">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">Pantaloneta tropical</h5>
+                      <p class="card-text">Bañador con diseño de paisajes tropicales en tono azul y negro, con detalles de palmeras </p>
+                      <p class="text-primary fw-bold">$45.000</p>
+                      <button class="btn btn-success" onclick="agregarAlCarrito('Pantaloneta tropical', 'assets/caballero/trajedebañoCaballero/bañoC2.jpg', 45.000,'adulto')">Agregar al carrito</button>
+                    </div>
+                  </div>
+                </div>
+          
+                <div class="col-md-3 mb-4" data-producto-id="bañadorC3" data-nombre=" negro, blanco" data-precio="40.000-50.000">
+                  <div class="card h-100">
+                    <div class="sticker">¡Oferta!</div>
+                    <img src="assets/caballero/trajedebañoCaballero/bañoC3.jpg" class="card-img-top" alt="Producto 3">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">Pantaloneta estampado tropical</h5>
+                      <p class="card-text">Bañador en tonos blanco y negro con estampado de hojas tropicales</p>
+                      <p class="text-primary fw-bold">$43.000</p>
+                      <button class="btn btn-success" onclick="agregarAlCarrito('Pantaloneta estampado tropical', 'assets/caballero/trajedebañoCaballero/bañoC3.jpg', 43.000,'adulto')">Agregar al carrito</button>
+
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-3 mb-4" data-producto-id="bañadorC4" data-nombre="azul, blanco" data-precio="51.000-60.000">
+                  <div class="card h-100">
+                    <img src="assets/caballero/trajedebañoCaballero/bañoC4.jpg" class="card-img-top" alt="Producto 4">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">Pantaloneta efecto degradado</h5>
+                      <p class="card-text">Bañador con un diseño moderno de degradado, pasando de azul oscuro en la parte superior a blanco en la parte inferior</p>
+                      <p class="text-primary fw-bold">$52.000</p>
+                      <button class="btn btn-success" onclick="agregarAlCarrito('Pantaloneta efecto degradado', 'assets/caballero/trajedebañoCaballero/bañoC4.jpg', 52.000,'adulto')">Agregar al carrito</button>
+
+                    </div>
+                  </div>
+                </div>
+                  
+                <!-- Fila 2 -->
+                
+                <div class="col-md-3 mb-4" data-producto-id="bañadorC5" data-nombre="gris, verde" data-precio="40.000-50.000">
+                  <div class="card h-100">
+                    <div class="sticker">¡Oferta!</div>
+                    <img src="assets/caballero/trajedebañoCaballero/bañoC5.jpg" class="card-img-top" alt="Producto 5">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">Pantaloneta estapado palmeras</h5>
+                      <p class="card-text">Bañador con diseño de degradado de gris a verde claro, acompañado de un estampado de palmeras</p>
+                      <p class="text-primary fw-bold">$40.000</p>
+                      <button class="btn btn-success" onclick="agregarAlCarrito('Pijama Elegante', 'assets/caballero/trajedebañoCaballero/bañoC5.jpg', 53.000,'adulto')">Agregar al carrito</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 mb-4", data-producto-id="bañadorC6" data-nombre="blanco, azul" data-precio="40.000-50.000">
+                  <div class="card h-100">
+                    <img src="assets/caballero/trajedebañoCaballero/bañoC6.jpg" class="card-img-top" alt="Producto 6">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">Pantaloneta tropical</h5>
+                      <p class="card-text">Bañador con diseño de degradado en tonos azul, y blanco, con estampado de palmeras</p>
+                      <p class="text-primary fw-bold">$64.000</p>
+                      <button class="btn btn-success" onclick="agregarAlCarrito('Pantaloneta tropical', 'assets/caballero/trajedebañoCaballero/bañoC6.jpg', 64.000,'adulto')">Agregar al carrito</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-3 mb-4" data-producto-id="bañadorC7" data-nombre="azul, naranja, negro" data-precio="71.000-80.000">
+                  <div class="card h-100">
+                    <div class="sticker">¡Oferta!</div>
+                    <img src="assets/caballero/trajedebañoCaballero/bañoC7.jpg" class="card-img-top" alt="Producto 7">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">Set de pantalonetas de baño</h5>
+                      <p class="card-text"> 3 Pantalonetas con estilos distintos, colores: azul, naranja, negro </p>
+                      <p class="text-primary fw-bold">$80.000</p>
+                      <button class="btn btn-success" onclick="agregarAlCarrito('Set de pantalonetas de baño', 'assets/caballero/trajedebañoCaballero/bañoC7.jpg', 80.000,'adulto')">Agregar al carrito</button>
+
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 mb-4" data-producto-id="bañadorC8" data-nombre="blanco, azul" data-precio="81.000-90.000">
+                  <div class="card h-100">
+                    <div class="sticker">¡Oferta!</div>
+                    <img src="assets/caballero/trajedebañoCaballero/bañoC8.jpg" class="card-img-top" alt="Producto 8">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">Set de 3 pantalonetas con estampado</h5>
+                      <p class="card-text">3 Baladores con estampados inspirados en el oceano, en color: azul y blanco</p>
+                      <p class="text-primary fw-bold">$85.000</p>
+                      <button class="btn btn-success" onclick="agregarAlCarrito('Set de 3 pantalonetas con estampado', 'assets/caballero/trajedebañoCaballero/bañoC8.jpg', 85.000,'adulto')">Agregar al carrito</button>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+                 <!-- Fila 3 -->
+                
+          </section>
+          
+          <a href="carrito.html" class="boton-carrito">
+            🛒
+          </a>  
+            
+       </head>
+
+  <!-- Botón para calificar -->
+<button class="btn btn-outline-primary btn-sm mt-2" onclick="toggleRating('${productoId}')">
+  Calificar este producto
+</button>
+  <!-- Botón flotante del chatbot -->
+  <button id="chatbot-toggle">💬</button>
+  
+  <!-- Ventana del chatbot -->
+  <div id="chatbot-box" style="display: none;">
+    <div id="chatbot-header">Asistente</div>
+    <div id="chatbot-messages"></div>
+    <input type="text" id="chatbot-input" placeholder="Escribe algo..." />
+  </div>
+  
+  <script src="productos.js"></script>
+  
+  
+      </body>
+  </html>

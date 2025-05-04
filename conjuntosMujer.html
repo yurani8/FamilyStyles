@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> <!-- Esto hace que la página sea responsive, ajustándose a diferentes tamaños de pantalla-->
+        <meta name="description" content="MAGNIFIQUE es una tenda virtua an la cual se vendera ropa y accesorios para niños y adultos" />
+        <meta name="author" content="D Yurani Mestizo Yule" />
+        <title>Tienda virtual FamilyStyle</title>
+      
+        <!--iconos de redes sociales-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fuentes-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <!-- Bootstrap 5 CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <!--tema diseño-->
+        <link href="css/stylesp.css" rel="stylesheet" />
+        
+    </head>
+    <body id="page-top">
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand" href="index.html"><img src="assets/img/logos/logoFamilyStyle1.png" alt="......" style="width: 250px; height: 80px;"/></a>
+                <button class="btn-cerrar" onclick="window.history.back()">✖</button>
+
+            </div>
+        </nav>
+        <div class="titulo-pagina text-center">
+          <h1>Conjuntos Dama</h1>
+        </div>
+        <div class="barra-superior"></div>
+    
+        <!-- contenido... 
+         PRODUCTOS-->
+        <section id="productos" class="py-5 bg-light">
+            <div class="container">
+              <!--seccion del filtro-->
+              <div class="filtro-conjuntos mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <div class="row align-items-end">
+                            <!-- Buscador por nombre/color -->
+                            <div class="col-md-6 mb-3">
+                                <label for="buscar-conjuntos" class="form-label">Buscar producto:</label>
+                                <input type="text" id="buscar-conjuntos" class="form-control" placeholder="gris, beige, marron, blanco, azul, rosa...">
+                            </div>
+                            
+                            <!-- Filtro por precio -->
+                            <div class="col-md-4 mb-3">
+                                <label for="filtro-precio" class="form-label">Rango de precios:</label>
+                                <select id="filtro-precio" class="form-select">
+                                    <option value="">Todos los precios</option>
+                                    <option value="50-60">$50.000 - $60.000</option>
+                                    <option value="61-70">$61.000 - $70.000</option>
+                                    <option value="71-80">$71.000 - $80.000</option>
+                                    <option value="81-90">$81.000 - $90.000</option>
+                                    <option value="m"> Precio Mayor </option>
+
+                                    
+                                    
+                                </select>
+                            </div>
+                            
+                            <!-- Botón limpiar -->
+                            <div class="col-md-2 mb-3">
+                                <button id="limpiar-filtros" class="btn btn-outline-secondary w-100">
+                                    <i class="fas fa-times"></i> Limpiar
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Contador -->
+                        <div class="text-center mt-2">
+                            <small id="contador-conjuntos" class="text-muted">Mostrando <span id="cantidad-productos">0</span> productos</small>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+          
+              <div class="row">
+                <!-- Fila 1 -->
+                <div class="col-md-3 mb-4" data-producto-id="conjuntoM1" data-nombre ="azul" data-precio="61.000-70.000">
+                  <div class="card h-100">
+                    <img src="assets/Mujer/conjuntosMujer/conjuntoM1.jpg" class="card-img-top" alt="Producto 1">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">Azure Motion</h5>
+                      <p class="card-text">Un conjunto deportivo en tono azul claro, compuesto por un cropped top de mangas cortas y pantalón ancho de tiro alto con detalles en blanco. </p>
+                      <p class="text-primary fw-bold">$70.000</p>
+                      <button class="btn btn-success" onclick="agregarAlCarrito('Azure Motion', 'assets/Mujer/conjuntosMujer/conjuntoM1.jpg', 65.000,'adulto')">Agregar al carrito</button>
+                    </div>
+                  </div>
+                </div>
+          
+                <div class="col-md-3 mb-4", data-producto-id="conjuntoM2" data-nombre="verde" data-precio="71.000-80.000">
+                  <div class="card h-100">
+                    <img src="assets/Mujer/conjuntosMujer/conjuntoM2.jpg" class="card-img-top" alt="Producto 2">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">Verdant Motion</h5>
+                      <p class="card-text">Un conjunto deportivo en tono verde claro, compuesto por un cropped de mangas largas y pantalón ancho de tiro alto</p>
+                      <p class="text-primary fw-bold">$75.000</p>
+                      <button class="btn btn-success" onclick="agregarAlCarrito('Verdant Motion', 'assets/Mujer/conjuntosMujer/conjuntoM2.jpg', 75.000,'adulto')">Agregar al carrito</button>
+                    </div>
+                  </div>
+                </div>
+          
+                <div class="col-md-3 mb-4" data-producto-id="conjuntoM3" data-nombre="azul" data-precio="61.000-70.000">
+                  <div class="card h-100">
+                    <img src="assets/Mujer/conjuntosMujer/conjuntoM3.jpg" class="card-img-top" alt="Producto 3">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">Teal Motion</h5>
+                      <p class="card-text">Un conjunto deportivo en tono azul, compuesto por un cropped con mangas largas y pantalón ancho de tiro alto. </p>
+                      <p class="text-primary fw-bold">$68.000</p>
+                      <button class="btn btn-success" onclick="agregarAlCarrito('Teal Motion', 'assets/Mujer/conjuntosMujer/conjuntoM3.jpg', 68.000,'adulto')">Agregar al carrito</button>
+
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-3 mb-4" data-producto-id="conjuntoC4" data-nombre="beige, marron, blanco" data-precio="m">
+                  <div class="card h-100">
+                    <div class="sticker">¡Oferta!</div>
+                    <img src="assets/Mujer/conjuntosMujer/conjuntoM4.jpg" class="card-img-top" alt="Producto 4">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">Nike Essentials</h5>
+                      <p class="card-text">Un set de ropa deportiva compuesto por seis tops y seis shorts en tonos neutros como beige, marrón y blanco.</p>
+                      <p class="text-primary fw-bold">$120.000</p>
+                      <button class="btn btn-success" onclick="agregarAlCarrito('Nike Essentials', 'assets/Mujer/conjuntosMujer/conjuntoM4.jpg', 120.000,'adulto')">Agregar al carrito</button>
+
+                    </div>
+                  </div>
+                </div>
+                  
+                <!-- Fila 2 -->
+                
+                <div class="col-md-3 mb-4" data-producto-id="conjuntoC5" data-nombre="azul, gris, blanco" data-precio="81.000-90.000">
+                  <div class="card h-100">
+                    <img src="assets/Mujer/conjuntosMujer/conjuntoM5.jpg" class="card-img-top" alt="Producto 5">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">Nebula Flow</h5>
+                      <p class="card-text">Un conjunto deportivo en tonos gris y blanco con un patrón de tie-dye que evoca movimiento y fluidez. 
+                        Compuesto por un cropped de mangas cortas y pantalón ancho</p>
+                      <p class="text-primary fw-bold">$86.000</p>
+                      <button class="btn btn-success" onclick="agregarAlCarrito('Nebula Flow', 'assets/Mujer/conjuntosMujer/conjuntoM5.jpg', 86.000,'adulto')">Agregar al carrito</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 mb-4", data-producto-id="conjuntoC6" data-nombre="salmon" data-precio="61.000-70.000">
+                  <div class="card h-100">
+                    <div class="sticker">¡Oferta!</div>
+                    <img src="assets/Mujer/conjuntosMujer/conjuntoM6.jpg" class="card-img-top" alt="Producto 6">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">Mocha Essence</h5>
+                      <p class="card-text">Un conjunto en tono salmon que combina un crop top ajustado, 
+                        un cárdigan ligero y pantalón de tiro alto</p>
+                      <p class="text-primary fw-bold">$70.000</p>
+                      <button class="btn btn-success" onclick="agregarAlCarrito('Mocha Essence', 'assets/Mujer/conjuntosMujer/conjuntoM6.jpg', 70.000,'adulto')">Agregar al carrito</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-3 mb-4" data-producto-id="conjuntoC7" data-nombre=" gris" data-precio="81.000-90.000">
+                  <div class="card h-100">
+                    
+                    <img src="assets/Mujer/conjuntosMujer/conjuntoM7.jpg" class="card-img-top" alt="Producto 7">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">Silver Drift</h5>
+                      <p class="card-text">Un conjunto en tono gris claro compuesto por un crop top de hombros descubiertos y pantalón de pierna ancha.</p>
+                      <p class="text-primary fw-bold">$82.000</p>
+                      <button class="btn btn-success" onclick="agregarAlCarrito('Set Jogger Clásico con Hoodie', 'assets/Mujer/conjuntosMujer/conjuntoM7.jpg', 82.000,'adulto')">Agregar al carrito</button>
+
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 mb-4" data-producto-id="conjuntoM8" data-nombre="beige" data-precio="71.000-80.000">
+                  <div class="card h-100">
+                    <img src="assets/Mujer/conjuntosMujer/conjuntoM8.jpg" class="card-img-top" alt="Producto 8">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">Dune Elegance</h5>
+                      <p class="card-text">Un conjunto en tono beige con detalles en blanco que aportan un aire sofisticado y relajado. </p>
+                      <p class="text-primary fw-bold">$80.000</p>
+                      <button class="btn btn-success" onclick="agregarAlCarrito('Dune Elegance', 'assets/Mujer/conjuntosMujer/conjuntoM8.jpg', 80.000,'adulto')">Agregar al carrito</button>
+                    </div>
+                  </div>
+                </div>
+             </div>
+  
+          </section>
+          
+          <a href="carrito.html" class="boton-carrito">
+            🛒
+          </a>  
+            
+       </head>
+
+  <!-- Botón para calificar -->
+<button class="btn btn-outline-primary btn-sm mt-2" onclick="toggleRating('${productoId}')">
+  Calificar este producto
+</button>
+  <!-- Botón flotante del chatbot -->
+  <button id="chatbot-toggle">💬</button>
+  
+  <!-- Ventana del chatbot -->
+  <div id="chatbot-box" style="display: none;">
+    <div id="chatbot-header">Asistente</div>
+    <div id="chatbot-messages"></div>
+    <input type="text" id="chatbot-input" placeholder="Escribe algo..." />
+  </div>
+  
+  <script src="productos.js"></script>
+  
+  
+      </body>
+  </html>
