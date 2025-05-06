@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
         contador.textContent = `Mostrando ${visibles} ${visibles === 1 ? 'categoría' : 'categorías'}`;
     }
     
+    
     // Event listeners
     filtroCategoria.addEventListener('change', aplicarFiltros);
     resetBtn.addEventListener('click', function() {

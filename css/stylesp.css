@@ -32,7 +32,7 @@
   .card-img-top {
     display: block;             /* Necesario para centrar con margin */
     margin: 0 auto;             /* Centra horizontalmente */
-    width: 250px;                /* Puedes ajustar esto como quieras */
+    width: 250px;                /* ancho */
     height: 275px;              /* Altura ajustable */
     max-width: 100%;            /* No excede el ancho del contenedor */
     object-fit: cover;          /* Recorta sin deformar */
@@ -122,6 +122,9 @@
   #contador-conjuntos {
     font-size: 0.9rem;
     color: #6c757d;
+  }
+  .producto-oculto {
+    display: none !important;
   }
 
     /* Asegura que los productos se oculten correctamente */
