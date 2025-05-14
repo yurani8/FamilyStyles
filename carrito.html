@@ -49,7 +49,7 @@
       // Inserta el HTML del botón en el contenedor
       document.getElementById("botonUsuarioContainer").innerHTML = html;
 
-      // Obtener el botón y verificar el estado de la sesión
+      // obtiene el botón y verifica el estado de la sesión
       const botonUsuario = document.getElementById("botonUsuario");
       const usuarioLogueado = JSON.parse(localStorage.getItem("usuarioLogueado"));
 
@@ -58,13 +58,13 @@
         botonUsuario.onclick = () => {
           if (confirm("¿Deseas cerrar sesión?")) {
             localStorage.removeItem("usuarioLogueado");
-            window.location.href = "index.html";  // Cambia esta ruta según la página a la que quieras redirigir
+            window.location.href = "index.html";  //al cerrar la secion dirige al usuario a la pagina inicial de la tienda
           }
         };
       } else {
         botonUsuario.title = "Iniciar sesión";
         botonUsuario.onclick = () => {
-          window.location.href = "prueba_login.html";  // Redirige al login si el usuario no está logueado
+          window.location.href = "prueba_login.html";  // dirige al usuario al login si el usuario no está logueado
         };
       }
     })
