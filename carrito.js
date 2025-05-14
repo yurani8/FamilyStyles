@@ -139,9 +139,16 @@ carrito.forEach(producto => {
   total += subtotal;
 });
 
-resumen += `\nTotal: $${total.toFixed(2)}
-\n\n¿Deseas confirmar el pago?`;
+ // Aplicar descuento si corresponde
+  let totalConDescuento = total;
+  if (total > 200.000) {
+    totalConDescuento = total * 0.8;
+    resumen += `\n💰 Total sin descuento: $${total.toFixed(2)}\n🎉 Descuento aplicado (20%): -$${(total - totalConDescuento).toFixed(2)}\n✅ Total a pagar: $${totalConDescuento.toFixed(2)}`;
+  } else {
+    resumen += `\n✅ Total a pagar: $${total.toFixed(2)}`;
+  }
 
+  resumen += `\n\n¿Deseas confirmar el pago?`;
 
 // Simulamos la pasarela de pago
 if (confirm(resumen)) {
