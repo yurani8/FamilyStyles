@@ -11,25 +11,24 @@ let correoTemporal = ""; //guarda el correo temporalmente que el usuario registr
         }
 
         function iniciarSesion(e) {
-        e.preventDefault();
-        const usuario = document.getElementById("usuario").value.trim();
-        const password = document.getElementById("password").value;
-
-        const usuarios = getUsuarios();
-        const encontrado = usuarios.find(u =>
-            (u.usuario === usuario || u.correo === usuario) && u.password === password
-        );
-
-        if (encontrado) {
-            localStorage.setItem("usuarioLogueado", JSON.stringify(encontrado));
-            alert("✅ Sesión iniciada");
-            localStorage.setItem("usuarioLogueado", "true");
-            window.location.href = "carrito.html";
-        } else {
-            alert("❌ Usuario o contraseña incorrectos");
-        }
-
-        }
+            e.preventDefault();
+            const usuario = document.getElementById("usuario").value.trim();
+            const password = document.getElementById("password").value;
+          
+            const usuarios = getUsuarios();
+            const encontrado = usuarios.find(u =>
+              (u.usuario === usuario || u.correo === usuario) && u.password === password
+            );
+          
+            if (encontrado) {
+              localStorage.setItem("usuarioLogueado", JSON.stringify(encontrado)); // ✅ Guarda el objeto completo
+              alert("✅ Sesión iniciada");
+              window.location.href = "carrito.html";
+            } else {
+              alert("❌ Usuario o contraseña incorrectos");
+            }
+          }
+          
 
         function registrarUsuario(e) {
         e.preventDefault();

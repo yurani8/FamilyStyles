@@ -4,7 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> <!-- Esto hace que la página sea responsive, ajustándose a diferentes tamaños de pantalla-->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">   <!--iconos de bootstrap-->
+
   <link href="css/stylesCarrito.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/botonUsuario.css">
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
@@ -12,15 +15,7 @@
         <a class="navbar-brand" href="index.html"><img src="assets/img/logos/logoFamilyStyle1.png" alt="......" style="width: 250px; height: 80px;"/></a>
         <button class="btn-cerrar" onclick="window.history.back()">✖</button>
 
-    </div>
 </nav>
-
-<!-- Botón de usuario que aparece solo en el carrito -->
-<div id="usuarioEnCarrito" class="boton-usuario-superior">
-  <span id="nombreUsuarioCarrito">👤 Usuario</span>
-  <button onclick="cerrarSesion()" class="btn-cerrar-sesion">Cerrar sesión</button>
-</div>
-
 
 <div class="barra-superior"></div>
 <div class="titulo-pagina text-center">
@@ -42,26 +37,45 @@
       <button class="btn btn-success" onclick="irAPago()">Ir a pagar</button>
     </div>
   </div>
-  
+
+<!-- Contenedor donde se cargará el botón -->
+<div id="botonUsuarioContainer"></div>
+
+<script>
+  // Cargar el archivo botonUsuario.html en el contenedor
+  fetch("botonUsuario.html")
+    .then(res => res.text())
+    .then(html => {
+      // Inserta el HTML del botón en el contenedor
+      document.getElementById("botonUsuarioContainer").innerHTML = html;
+
+      // Obtener el botón y verificar el estado de la sesión
+      const botonUsuario = document.getElementById("botonUsuario");
+      const usuarioLogueado = JSON.parse(localStorage.getItem("usuarioLogueado"));
+
+      if (usuarioLogueado) {
+        botonUsuario.title = "Cerrar sesión";
+        botonUsuario.onclick = () => {
+          if (confirm("¿Deseas cerrar sesión?")) {
+            localStorage.removeItem("usuarioLogueado");
+            window.location.href = "index.html";  // Cambia esta ruta según la página a la que quieras redirigir
+          }
+        };
+      } else {
+        botonUsuario.title = "Iniciar sesión";
+        botonUsuario.onclick = () => {
+          window.location.href = "prueba_login.html";  // Redirige al login si el usuario no está logueado
+        };
+      }
+    })
+    .catch(error => {
+      console.error("No se pudo cargar el archivo botonUsuario.html", error);
+    });
+</script>
+
+
 
   <script src="carrito.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const usuario = localStorage.getItem('usuarioActivo'); // Asume que el usuario ya está guardado aquí
-      const contenedor = document.getElementById('usuarioEnCarrito');
-      const spanUsuario = document.getElementById('nombreUsuarioCarrito');
-  
-      if (usuario) {
-        contenedor.style.display = 'flex';
-        spanUsuario.textContent = `👤 ${usuario}`;
-      }
-    });
-  
-    function cerrarSesion() {
-      localStorage.removeItem('usuarioActivo');
-      window.location.href = 'login.html'; // Redirige al login
-    }
-  </script>
   
 
 </body>
