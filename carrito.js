@@ -120,9 +120,9 @@ if (carrito.length === 0) {
   return;
 }
 
-const logueado = localStorage.getItem("usuarioLogueado");
+const logueado = JSON.parse(localStorage.getItem("usuarioLogueado"));
 
-if (logueado !== "true") {
+if (!logueado) {
   alert("Debes iniciar sesión para continuar con el pago.");
   window.location.href = "prueba_login.html";
   return;
