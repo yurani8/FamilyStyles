@@ -131,7 +131,6 @@ header.masthead .masthead-heading {
   }
 
 /* ======== CHATBOT ========== */
- /* --- Estilos generales del chatbot --- */
      #chatbot-toggle {
       position: fixed;
       bottom: 180px;
@@ -143,26 +142,26 @@ header.masthead .masthead-heading {
       border-radius: 50%;
       cursor: pointer;
       font-size: 40px;
-      z-index: 1000;
+      z-index: 100;
     }
 
-    #chatbot-box {
-              position: fixed;
-              bottom: 110px;
-              right: 130px;
-              width: 300px;
-              height: 400px;
-              background: white;
-              border: 1px solid #ccc;
-              border-radius: 10px;
-              display: none; /* 👈 IMPORTANTE: Oculto por defecto */
-              box-shadow: 0 0 10px rgba(0,0,0,0.3);
-              z-index: 999;
-              flex-direction: column;
-              overflow: hidden;
-              display: flex;
-              flex-direction: column;
-            }
+    #chatbot-box { 
+    position: fixed;
+    bottom: 110px;
+    right: 130px;
+    width: 300%;
+    height: 400px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    display: none; /* 👈 IMPORTANTE: Oculto por defecto */
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    z-index: 999;
+    flex-direction: column;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+     }
         
 
     #chatbot-header {
