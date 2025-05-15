@@ -56,6 +56,8 @@ header.masthead {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
   color: white;
   display: flex;
   flex-direction: column;
@@ -83,9 +85,20 @@ header.masthead .masthead-heading {
   color: #fff;
   padding: 14px 28px;
   font-weight: bold;
+  font-size: 1rem;
+  width: auto;
+  max-width: 90%;
+  text-align: center;
   text-transform: uppercase;
   text-decoration: none; /* ❌ Sin subrayado */
   transition: background-color 0.3s ease;
+}
+/* Ajuste para móviles */
+@media (max-width: 576px) {
+  .custom-btn {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
 }
 
 
