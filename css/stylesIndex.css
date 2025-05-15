@@ -149,7 +149,7 @@ header.masthead .masthead-heading {
     position: fixed;
     bottom: 110px;
     right: 30px;
-    width: 300px;
+    width: 350px;
     max-width: 90%; /* ✅ Para que se ajuste a pantallas pequeñas */
     height: 400px;
     background: white;
