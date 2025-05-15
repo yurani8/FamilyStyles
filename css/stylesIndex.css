@@ -40,12 +40,11 @@
 #mainNav .nav-link:hover {
   color: #ffc800;
 }
-/* Oculta botón hamburguesa en pantallas grandes */
-@media (min-width: 992px) {
+/* Oculta botón hamburguesa en pantalla */
+
   .navbar-toggler {
-    display: none;
+    display: none!important;
   }
-}
 
 /* ======== FONDO Y TEXTO ========== */
 /* IMAGEN DE FONDO DEBAJO DE LA BARRA */
