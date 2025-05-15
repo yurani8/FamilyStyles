@@ -1,0 +1,176 @@
+/*BARRA */
+#mainNav {
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  padding: 10px 0px;
+}
+
+/* Asegura que el menú sea horizontal en pantallas grandes */
+#mainNav .navbar-nav {
+  display: flex;
+  gap: 20px;
+}
+#mainNav .container {
+  background-color: transparent !important;
+  display: flex;
+  padding-right: 40px; /*ESPACIO DEL LADO DERCHO*/
+  align-items: center;     /* ✅ Centrado vertical */
+  justify-content: space-between; /* Logo a la izquierda, menú a la derecha */
+}
+
+/*MENU*/
+
+#mainNav .navbar-nav {
+  list-style: none; /* ❌ Quita viñetas */
+  display: flex;
+  justify-content: flex-end;
+  gap: 30px;
+}
+#mainNav .nav-link {
+  color: rgb(255, 255, 255);
+  font-family: "Montserrat" sans-serif;
+  text-transform: uppercase;
+  text-decoration: none; /* ❌ Sin subrayado */
+  transition: color 0.3s ease;
+}
+#mainNav .nav-link:hover {
+  color: #ffc800;
+}
+/* Oculta botón hamburguesa en pantallas grandes */
+@media (min-width: 992px) {
+  .navbar-toggler {
+    display: none;
+  }
+}
+
+/* ======== FONDO Y TEXTO ========== */
+/* IMAGEN DE FONDO DEBAJO DE LA BARRA */
+header.masthead {
+  height: 100vh;
+  
+  background-image: url("../assets/img/header-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+/*ESTILO LETRA FAMILYSTYLE*/
+header.masthead .masthead-heading {
+  font-size: 4.55rem;
+  font-weight: 700;
+  line-height: 4.55rem;
+  margin-bottom: 2rem;
+  font-family: "lilita one", sans-serif;
+}
+ /*TAMÑO BIENBENIDO*/
+  header.masthead .masthead-subheading {
+    font-size: 2.25rem;
+  }
+
+/* ======== BOTÓN PRINCIPAL ========== */
+.custom-btn {
+  background-color: #3c0074;
+  border: none;
+  color: #fff;
+  padding: 14px 28px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none; /* ❌ Sin subrayado */
+  transition: background-color 0.3s ease;
+}
+
+
+/* ======== CARRITO FLOTANTE ========== */
+.boton-carrito {
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  background-color: #1043a3;
+  color: white;
+  padding: 12px 16px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 40px;
+  z-index: 999;
+  transition: background-color 0.3s ease;
+}
+.boton-carrito:hover {
+  background-color: #0d3791;
+}
+
+/* ======== CHATBOT ========== */
+#chatbot-toggle {
+  position: fixed;
+  bottom: 110px;
+  right: 30px;
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 40px;
+  z-index: 1000;
+}
+#chatbot-box {
+  position: fixed;
+  bottom: 110px;
+  right: 130px;
+  width: 300px;
+  height: 400px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  display: none;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  z-index: 999;
+  flex-direction: column;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+#chatbot-header {
+  background: #002a57;
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  text-align: center;
+}
+#chatbot-messages {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+#chatbot-input {
+  border: none;
+  border-top: 1px solid #ccc;
+  padding: 10px;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ======== TIPOGRAFÍA Y GLOBAL ========== */
+h1, h2, h3, h4 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}

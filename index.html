@@ -13,7 +13,7 @@
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
         <!--tema diseño-->
-        <link href="css/styles.css" rel="stylesheet" />
+        <link href="css/stylesIndex.css" rel="stylesheet" />
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -22,19 +22,21 @@
                 <!--incerto el logo -->
                 <a  class="navbar-brand"><img src="assets/img/logos/logoFamilyStyle1.png" alt="......" style="width: 250px; height: 80px;"/></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" 
-                aria-expanded="false" aria-label="Toggle navigation" style="width: 250px; height: 80px;">
-            
-                    Menu
-                    <i class="fas fa-bars ms-1"></i>
+                aria-expanded="false" aria-label="Toggle navigation" style="width: 250px; height: 80px;"></button>
+                
+                <!-- BOTÓN HAMBURGUESA SOLO PARA MÓVILES -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive">
+                  <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="servivicios.html">Servicios</a></li>
-                        <li class="nav-item"><a class="nav-link" href="productos.html">Productos</a></li>
-                        <li class="nav-item"><a class="nav-link" href="acercade.html">Acerca de</a></li>
-                        <li class="nav-item"><a class="nav-link" href="equipo.html">Equipo</a></li>
-                        
-                    </ul>
+
+                <!-- MENÚ HORIZONTAL A LA DERECHA -->
+                <div class="collapse navbar-collapse justify-content-end" id="navbarResponsive">
+                  <ul class="navbar-nav">
+                     <li class="nav-item"><a class="nav-link" href="servivicios.html">Servicios</a></li>
+                     <li class="nav-item"><a class="nav-link" href="productos.html">Productos</a></li>
+                     <li class="nav-item"><a class="nav-link" href="acercade.html">Acerca de</a></li>
+                     <li class="nav-item"><a class="nav-link" href="equipo.html">Equipo</a></li>
+                  </ul>
                 </div>
             </div>
         </nav>
@@ -44,89 +46,14 @@
         <header class="masthead">
             <div class="container">
                 <div class="masthead-subheading">¡Bienvenido!</div>
-                <div class="masthead-heading text-uppercase">A FamilyStyle</div>
-                <a class="btn btn-primary btn-xl text-uppercase custom-btn" href="acercade.html">Mas informacion</a>
+                <div class="masthead-heading text-uppercase">A FAMILYSTYLE</div>
+                <a class="btn btn-primary btn-xl text-uppercase custom-btn" href="acercade.html">Mas Informacion</a>
             </div>
         </header>
-
-        <a href="carrito.html" style="
-         position: fixed;
-         bottom: 20px;
-         right: 30px;
-         background-color: #1043a3;
-         color: white;
-         padding: 12px 16px;
-         border-radius: 50px;
-         text-decoration: none;
-         font-size: 40px;
-         z-index: 999;">
-         🛒
-        </a>
-
-        <style>
-            /* --- Estilos generales del chatbot --- */
-            #chatbot-toggle {
-              position: fixed;
-              bottom: 110px;
-              right: 30px;
-              background: #007bff;
-              color: white;
-              border: none;
-              padding: 12px 16px;
-              border-radius: 50%;
-              cursor: pointer;
-              font-size: 40px;
-              z-index: 1000;
-            }
         
-            #chatbot-box {
-              position: fixed;
-              bottom: 110px;
-              right: 130px;
-              width: 300px;
-              height: 400px;
-              background: white;
-              border: 1px solid #ccc;
-              border-radius: 10px;
-              display: none; /* 👈 IMPORTANTE: Oculto por defecto */
-              box-shadow: 0 0 10px rgba(0,0,0,0.3);
-              z-index: 999;
-              flex-direction: column;
-              overflow: hidden;
-              display: flex;
-              flex-direction: column;
-            }
-        
-            #chatbot-header {
-              background: #002a57;
-              color: white;
-              padding: 10px;
-              font-weight: bold;
-              text-align: center;
-            }
-        
-            #chatbot-messages {
-              flex: 1;
-              padding: 10px;
-              overflow-y: auto;
-              font-size: 14px;
-              display: flex;
-              flex-direction: column;
-              gap: 5px;
-            }
-        
-            #chatbot-input {
-              border: none;
-              border-top: 1px solid #ccc;
-              padding: 10px;
-              font-size: 14px;
-              width: 100%;
-              box-sizing: border-box;
-            }
-          </style>
-        </head>
-        
-        
+           <a href="carrito.html" class="boton-carrito">
+            🛒
+           </a>  
           <!-- Botón flotante del chatbot -->
           <button id="chatbot-toggle">💬</button>
         
@@ -136,57 +63,8 @@
             <div id="chatbot-messages"></div>
             <input type="text" id="chatbot-input" placeholder="Escribe algo..." />
           </div>
-<script>
-const toggleBtn = document.getElementById('chatbot-toggle');
-const chatbotBox = document.getElementById('chatbot-box');
-const input = document.getElementById('chatbot-input');
-const messages = document.getElementById('chatbot-messages');
-
-// Ocultar el chatbot al iniciar
-window.addEventListener('load', () => {
-  chatbotBox.style.display = 'none';
-});
-
-// Mostrar/ocultar al hacer clic
-toggleBtn.addEventListener('click', () => {
-  chatbotBox.style.display = chatbotBox.style.display === 'none' ? 'flex' : 'none';
-});
-
-// Capturar mensaje del usuario
-input.addEventListener('keydown', (e) => {
-  if (e.key === 'Enter' && input.value.trim() !== '') {
-    const userMsg = input.value.trim();
-    addMessage('👤', userMsg);
-    input.value = '';
-    setTimeout(() => {
-      const reply = responderSimulado(userMsg);
-      addMessage('🤖', reply);
-    }, 600);
-  }
-});
-
-// Mostrar mensaje en pantalla
-function addMessage(sender, text) {
-  const msg = document.createElement('div');
-  msg.innerHTML = `<strong>${sender}</strong>: ${text}`;
-  messages.appendChild(msg);
-  messages.scrollTop = messages.scrollHeight;
-}
-
-// Respuestas simuladas básicas
-function responderSimulado(texto) {
-  texto = texto.toLowerCase();
-  if (texto.includes('hola')) return '¡Hola! ¿En qué puedo ayudarte?';
-  if (texto.includes('precio')) return 'Puedes ver todos los precios en la tienda.';
-  if (texto.includes('recomendados')) return 'Nuestras ofertas';
-  if (texto.includes('ofertas')) return '¡Claro! contamos con muchas ofertas te encantaran 😊';
-  if (texto.includes('talla')) return 'Tenemos tallas para adultos, niños y bebés.';
-  if (texto.includes('gracias')) return '¡Con gusto! 😊';
-  return 'Lo siento, aún estoy aprendiendo 🧠';
-}
-
-</script> 
-
+          
+          <script src="index.js"></script>
           <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>      
     </body>
 </html>

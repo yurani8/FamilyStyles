@@ -1,7 +1,7 @@
 
-/* Asegúrate de que el fondo oscuro esté aplicado */
+/* fondo oscuro BARRA */
 #mainNav {
-    background-color: #1e1f21; /* tono oscuro similar al de la imagen */
+    background-color: #1e1f21; /* tono oscuro */
     padding-top: 10px;
     padding-bottom: 10px;
   }
@@ -23,11 +23,14 @@
     z-index: 9999;         /* Siempre encima */
     transition: color 0.3s ease;
   }
+  .btn-cerrar:hover {
+    color: #ffc107;        /* Dorado al pasar el mouse */
+  }
+  /*tamaño y posición aL contenedor */
   .card {
     display: block;
     width: 65%;
     margin: 0 auto;
-    
   }
   .card-img-top {
     display: block;             /* Necesario para centrar con margin */
@@ -48,11 +51,7 @@
   font-family: "Playfair Display", serif;
 }
   
-  .btn-cerrar:hover {
-    color: #ffc107;        /* Dorado al pasar el mouse */
-  }
   /* pagina*/
- 
   .titulo-pagina {
     font: 1em sans-serif;
     background-color: #ffffff;
