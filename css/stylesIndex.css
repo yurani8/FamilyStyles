@@ -151,7 +151,7 @@ header.masthead .masthead-heading {
     right: 110px; /*mover a la izquierda*/
     width: 270px; /*ancho*/
     max-width: 90%; /* ✅ Para que se ajuste a pantallas pequeñas */
-    height: 350px;
+    height: 400px;
     background: white;
     border: 1px solid #ccc;
     border-radius: 10px;
