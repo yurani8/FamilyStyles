@@ -148,8 +148,8 @@ header.masthead .masthead-heading {
     #chatbot-box { 
     position: fixed;
     bottom: 110px;
-    right: 100px; /*mover a la izquierda*/
-    width: 290px; /*ancho*/
+    right: 110px; /*mover a la izquierda*/
+    width: 270px; /*ancho*/
     max-width: 90%; /* ✅ Para que se ajuste a pantallas pequeñas */
     height: 350px;
     background: white;
