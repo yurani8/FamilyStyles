@@ -148,13 +148,14 @@ header.masthead .masthead-heading {
     #chatbot-box { 
     position: fixed;
     bottom: 110px;
-    right: 130px;
-    width: 300%;
+    right: 30px;
+    width: 300px;
+    max-width: 90%; /* ✅ Para que se ajuste a pantallas pequeñas */
     height: 400px;
     background: white;
     border: 1px solid #ccc;
     border-radius: 10px;
-    display: none; /* 👈 IMPORTANTE: Oculto por defecto */
+    display: none; /* IMPORTANTE: Oculto por defecto */
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
     z-index: 999;
     flex-direction: column;
@@ -190,7 +191,14 @@ header.masthead .masthead-heading {
       width: 100%;
       box-sizing: border-box;
     }
-
+@media (max-width: 480px) {
+  #chatbot-box {
+    bottom: 100px;
+    right: 10px;
+    width: 90%;
+    height: 300px; /* ✅ Altura más pequeña para móviles */
+  }
+}
 /* ======== TIPOGRAFÍA Y GLOBAL ========== */
 h1, h2, h3, h4 {
   font-family: "Montserrat", sans-serif;
