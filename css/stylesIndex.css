@@ -100,6 +100,7 @@ header.masthead .masthead-heading {
   text-decoration: none; /* ❌ Sin subrayado */
   transition: background-color 0.3s ease;
 }
+
 /* Ajuste para móviles */
 @media (max-width: 576px) {
   .custom-btn {
