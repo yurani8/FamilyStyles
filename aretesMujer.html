@@ -7,8 +7,7 @@
         <meta name="author" content="D Yurani Mestizo Yule" />
         <title>Tienda virtual FamilyStyle</title>
       
-        <!--iconos de redes sociales-->
-        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+       <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">   <!--iconos de bootstrap-->
         <!-- Google fuentes-->
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
@@ -17,6 +16,7 @@
 
         <!--tema diseño-->
         <link href="css/stylesp.css" rel="stylesheet" />
+        <link rel="stylesheet" href="css/botonUsuario.css">
         
     </head>
     <body id="page-top">
@@ -87,7 +87,7 @@
                       <h5 class="card-title">Set de 3 Collares</h5>
                       <p class="card-text">Acero inoxidable dorado, set de 3 aretes en diferentes tamaños en forma de C</p>
                       <p class="text-primary fw-bold">$25.000</p>
-                      <button class="btn btn-success" onclick="agregarAlCarrito('Set de 3 aretes', 'assets/accesorioMujer/aretes/arete1.jpg', 25.000,'arete')">Agregar al carrito</button>
+                      <button class="btn btn-success" onclick="agregarAlCarrito('Set de 3 aretes', 'assets/accesorioMujer/aretes/arete1.jpg', 25.000,'adulto')">Agregar al carrito</button>
                     </div>
                   </div>
                 </div>
@@ -99,7 +99,7 @@
                       <h5 class="card-title">Par de aretes dorados</h5>
                       <p class="card-text">De acero de titanio , arete en forma de aro</p>
                       <p class="text-primary fw-bold">$20.900</p>
-                      <button class="btn btn-success" onclick="agregarAlCarrito('arete en forma de aro dorado', 'assets/accesorioMujer/aretes/arete2.jpg', 20.900,'arete')">Agregar al carrito</button>
+                      <button class="btn btn-success" onclick="agregarAlCarrito('arete en forma de aro dorado', 'assets/accesorioMujer/aretes/arete2.jpg', 20.900,'adulto')">Agregar al carrito</button>
                     </div>
                   </div>
                 </div>
@@ -111,7 +111,7 @@
                       <h5 class="card-title">Aretes dorados</h5>
                       <p class="card-text">De acero de titanio, par de aretes en forma de aro.</p>
                       <p class="text-primary fw-bold">$20.000</p>
-                      <button class="btn btn-success" onclick="agregarAlCarrito('aretes en forma de aro', 'assets/accesorioMujer/aretes/arete3.jpg', 20.000,'arete')">Agregar al carrito</button>
+                      <button class="btn btn-success" onclick="agregarAlCarrito('aretes en forma de aro', 'assets/accesorioMujer/aretes/arete3.jpg', 20.000,'adulto')">Agregar al carrito</button>
 
                     </div>
                   </div>
@@ -125,7 +125,7 @@
                         <h5 class="card-title">Aretes plateados</h5>
                         <p class="card-text">De acero inoxidable plateado,  par de aretes en forma de gota lisa</p>
                         <p class="text-primary fw-bold">$25.000</p>
-                        <button class="btn btn-success" onclick="agregarAlCarrito('Aretes plateados', 'assets/accesorioMujer/aretes/arete4.jpg', 25.000,'arete')">Agregar al carrito</button>
+                        <button class="btn btn-success" onclick="agregarAlCarrito('Aretes plateados', 'assets/accesorioMujer/aretes/arete4.jpg', 25.000,'adulto')">Agregar al carrito</button>
   
                       </div>
                     </div>
@@ -148,8 +148,35 @@
     <div id="chatbot-messages"></div>
     <input type="text" id="chatbot-input" placeholder="Escribe algo..." />
   </div>
-  <!-- funciones -->
-  <script src="productos.js"></script>
+
+  <button class="boton-fijo" onclick="abrirModal()">Tabla de tallas</button>
+  
+  <!-- ✅ Modal -->
+  <div id="modalTallas" class="modal-fondo">
+    <div class="modal-contenido">
+      <span class="cerrar-modal" onclick="cerrarModal()">&times;</span>
+      <h2>Tabla de Tallas</h2>
+      <table class="tabla-tallas">
+        <thead>
+          <tr>
+            <th>Talla</th>
+             <th>Tamaño del arete (mm)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>XS</td><td> 2-5 mm</td></tr>
+          <tr><td>S</td><td>6-9 mm</td></tr>
+          <tr><td>M</td><td>10-14 mm</td></tr>
+          <tr><td>L</td><td>15-18 mm</td></tr>
+          <tr><td>XL</td><td>19-25 mm</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+  <script src="anillos.js"></script>
+  <!-- Contenedor donde se cargará el botón -->
+<div id="botonUsuarioContainer"></div>
   
       </body>
   </html>

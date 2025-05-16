@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pasarela de Pago</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/stylesPasarela.css" rel="stylesheet" />
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand" href=""><img src="assets/img/logos/logoFamilyStyle1.png" alt="......" style="width: 250px; height: 80px;"/></a>
+        <button class="btn-cerrar" title="Cerrar" onclick="window.history.back()">✖</button>
+
+</nav>
+
+<div class="barra-superior"></div>
+
+  <div class="container mt-5">
+    <h2 class="text-center mb-4 titulo-metodo-pago">Selecciona tu método de pago</h2>
+    <div class="row text-center">
+      <div class="col-4 col-md-2 metodo-pago" onclick="seleccionarMetodo('nequi')">
+        <img src="https://i.pinimg.com/736x/42/a1/07/42a107d9a4579ecd5d23dd2b69f2b59a.jpg" alt="Nequi" width="60"/>
+        <p>Nequi</p>
+      </div>
+      <div class="col-4 col-md-2 metodo-pago" onclick="seleccionarMetodo('wompi')">
+        <img src="https://wompi.com/assets/img/recursos_graficos/logo_principal-Wompi.svg" alt="Wompi" width="60"/>
+        <p>Wompi</p>
+      </div>
+      <div class="col-4 col-md-2 metodo-pago" onclick="seleccionarMetodo('pse')">
+        <img src="https://www.sifer.com.co/wp-content/uploads/2021/02/pse-forma-297x300.jpg" alt="PSE" width="60"/>
+        <p>PSE</p>
+      </div>
+      <div class="col-4 col-md-2 metodo-pago" onclick="seleccionarMetodo('visa')">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa" width="60"/>
+        <p>Visa</p>
+      </div>
+      <div class="col-4 col-md-2 metodo-pago" onclick="seleccionarMetodo('bancolombia')">
+        <img src="https://i.pinimg.com/736x/b8/cd/c1/b8cdc1ad498fe080bc21bb5a03c24f83.jpg" alt="Bancolombia" width="60"/>
+        <p>Bancolombia</p>
+      </div>
+    </div>
+
+    <hr class="my-4">
+
+    <div id="formulario-metodo"></div>
+
+    <div class="mt-4 text-center">
+      <button class="btn btn-success" onclick="procesarPago()">Confirmar Pago</button>
+    </div>
+  </div>
+  <script src="pasarela.js"></script>
+</body>
+</html>

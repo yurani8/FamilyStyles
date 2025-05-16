@@ -142,24 +142,22 @@ const productoId = producto.getAttribute("data-producto-id");
 
 // Creamos el HTML para calificación y comentarios
 const ratingHTML = `
-<div class="rating-section mt-3">
-<select class="form-select" id="rating-${productoId}">
-<option value="5">Califica Este Producto</option>
-<option value="5">⭐⭐⭐⭐⭐</option>
-<option value="4">⭐⭐⭐⭐</option>
-<option value="3">⭐⭐⭐</option>
-<option value="2">⭐⭐</option>
-<option value="1">⭐</option>
-</select>
-
-<textarea class="form-control mt-2" id="comment-${productoId}" placeholder="Escribe tu comentario..."></textarea>
-<button class="btn btn-primary btn-sm mt-2" onclick="enviarComentario('${productoId}')">Enviar comentario</button>
-
-<button class="btn btn-secondary btn-sm mt-2" id="toggle-btn-${productoId}" style="display: none;" onclick="toggleComentarios('${productoId}')">Ver/Ocultar Comentarios</button>
-
-<div class="comentarios mt-3" id="comentarios-${productoId}" style="display: none;">
-<!-- Comentarios se cargarán aquí -->
-</div>
+<button class="btn btn-outline-primary btn-sm mt-2" onclick="toggleRating('${productoId}')">
+  Calificar este producto
+</button>
+<div id="rating-section-${productoId}" style="display: none;">
+  <select class="form-select" id="rating-${productoId}">
+    <option value="5">Califica Este Producto</option>
+    <option value="5">⭐⭐⭐⭐⭐</option>
+    <option value="4">⭐⭐⭐⭐</option>
+    <option value="3">⭐⭐⭐</option>
+    <option value="2">⭐⭐</option>
+    <option value="1">⭐</option>
+  </select>
+  <textarea class="form-control mt-2" id="comment-${productoId}" placeholder="Escribe tu comentario..."></textarea>
+  <button class="btn btn-primary btn-sm mt-2" onclick="enviarComentario('${productoId}')">Enviar comentario</button>
+ <button class="btn btn-secondary btn-sm mt-2" id="toggle-btn-${productoId}" style="display: none;" onclick="toggleComentarios('${productoId}')">Ver/Ocultar Comentarios</button>
+  <div class="comentarios mt-3" id="comentarios-${productoId}" style="display: none;"></div>
 </div>
 `;
 
@@ -267,6 +265,17 @@ document.getElementById(`toggle-btn-${productoId}`).style.display = "none";
 document.getElementById(`comentarios-${productoId}`).style.display = "none";
 }
 }
+function toggleRating(productoId) {
+  const section = document.getElementById(`rating-section-${productoId}`);
+  if (section) {
+    // Alternar entre mostrar/ocultar
+    if (section.style.display === "none" || section.style.display === "") {
+      section.style.display = "block";
+    } else {
+      section.style.display = "none";
+    }
+  }
+}
 
 //tabla de tallas y boton
 function abrirModal() {
@@ -283,3 +292,35 @@ if (event.target === modal) {
 modal.style.display = "none";
 }
 }
+
+/* Funciones del boton de ususario */
+
+// Cargar el archivo botonUsuario.html en el contenedor
+fetch("botonUsuario.html")
+    .then(res => res.text())
+    .then(html => {
+      // Inserta el HTML del botón en el contenedor
+      document.getElementById("botonUsuarioContainer").innerHTML = html;
+
+      // obtiene el botón y verifica el estado de la sesión
+      const botonUsuario = document.getElementById("botonUsuario");
+      const usuarioLogueado = JSON.parse(localStorage.getItem("usuarioLogueado"));
+
+      if (usuarioLogueado) {
+        botonUsuario.title = "Cerrar sesión";
+        botonUsuario.onclick = () => {
+          if (confirm("¿Deseas cerrar sesión?")) {
+            localStorage.removeItem("usuarioLogueado");
+            window.location.href = "index.html";  //al cerrar la secion dirige al usuario a la pagina inicial de la tienda
+          }
+        };
+      } else {
+        botonUsuario.title = "Iniciar sesión";
+        botonUsuario.onclick = () => {
+          window.location.href = "prueba_login.html";  // dirige al usuario al login si el usuario no está logueado
+        };
+      }
+    })
+    .catch(error => {
+      console.error("No se pudo cargar el archivo botonUsuario.html", error);
+    });

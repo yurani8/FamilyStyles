@@ -1,3 +1,13 @@
+/*Funcion para  que los precios se muestren formateados en pesos colombianos*/
+function formatearCOP(valor) {
+  return new Intl.NumberFormat('es-CO', {
+    style: 'currency',
+    currency: 'COP',
+    minimumFractionDigits: 3,
+    maximumFractionDigits: 3
+  }).format(valor);
+}
+
 function mostrarCarrito() {
     const contenedor = document.getElementById('carrito-container');
     const totalCarrito = document.getElementById('total-carrito');
@@ -8,7 +18,7 @@ function mostrarCarrito() {
 
     if (carrito.length === 0) {
       contenedor.innerHTML = '<p class="text-center">El carrito está vacío.</p>';
-      totalCarrito.textContent = 'Total: $0.00';
+      totalCarrito.textContent = 'Total: $0.000';
       return;
     }
 
@@ -24,7 +34,7 @@ function mostrarCarrito() {
           <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
           <div class="card-body text-center">
             <h5 class="card-title">${producto.nombre}</h5>
-            <p>Precio: $${producto.precio.toFixed(2)}</p>
+            <p>Precio: ${formatearCOP(producto.precio)}</p>
             <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
               <div>
               <label>Cantidad:</label><br>
@@ -40,7 +50,7 @@ function mostrarCarrito() {
                </div>
                </div>
                <div>
-                <p><strong>Subtotal: $${subtotal.toFixed(2)}</strong></p>
+                <p><strong>Subtotal: ${formatearCOP(subtotal)}</strong></p>
                 <button class="btn btn-danger btn-sm" onclick="eliminarDelCarrito(${index})">Eliminar</button>
                </div>
               </div>
@@ -57,12 +67,12 @@ function mostrarCarrito() {
     //mostrar el total (con o sin descuento)
     if(total !== totalConDescuento){
       totalCarrito.innerHTML = `
-        <span style="text-decoration: line-through; color: red;">Total: $${total.toFixed(2)}</span><br>
-        <span style="color: green; font-weight: bold;">Descuento aplicado: $${totalConDescuento.toFixed(2)}</span>
+       <span style="text-decoration: line-through; color: red;">Total: ${formatearCOP(total)}</span><br>
+       <span style="color: green; font-weight: bold;">Descuento aplicado: ${formatearCOP(totalConDescuento)}</span>
       `;
 
     }else{
-      totalCarrito.textContent= `Total: $${total.toFixed(2)}`;
+     totalCarrito.textContent= `Total: ${formatearCOP(total)}`;
     }
     }
 
@@ -84,10 +94,6 @@ if (tipo === 'adulto') {
   tallas = ['2','4', '6', '8', '10', '12'];
 } else if (tipo === 'bebé') {
   tallas = ['0-3M', '3-6M', '6-12M', '12-18M'];
-}else if (tipo === 'cadena') {
-  tallas = ['40-45 CM', '45-50CM', '50-55CM', '55-60CM', '60-65CM'];
-}else if (tipo === 'anillo') {
-  tallas = ['14MM', '15MM', '16MM', '17MM', '18MM','19MM','20MM','21MM'];
 }
 
 
@@ -135,7 +141,7 @@ let total = 0;
 
 carrito.forEach(producto => {
   const subtotal = producto.precio * producto.cantidad;
-  resumen += `${producto.nombre} x ${producto.cantidad} Talla: ${producto.talla} - $${subtotal.toFixed(2)}\n`;
+  resumen += `${producto.nombre} x ${producto.cantidad} Talla: ${producto.talla} - ${formatearCOP(subtotal)}\n`;
   total += subtotal;
 });
 
@@ -143,9 +149,9 @@ carrito.forEach(producto => {
   let totalConDescuento = total;
   if (total > 200.000) {
     totalConDescuento = total * 0.8;
-    resumen += `\n💰 Total sin descuento: $${total.toFixed(2)}\n🎉 Descuento aplicado (20%): -$${(total - totalConDescuento).toFixed(2)}\n✅ Total a pagar: $${totalConDescuento.toFixed(2)}`;
+    resumen += `\n💰 Total sin descuento: ${formatearCOP(total)}\n🎉 Descuento aplicado (20%): -${formatearCOP(total - totalConDescuento)}\n✅ Total a pagar: ${formatearCOP(totalConDescuento)}`;
   } else {
-    resumen += `\n✅ Total a pagar: $${total.toFixed(2)}`;
+    resumen += `\n✅ Total a pagar: ${formatearCOP(total)}`;
   }
 
   resumen += `\n\n¿Deseas confirmar el pago?`;
@@ -153,11 +159,43 @@ carrito.forEach(producto => {
 // Simulamos la pasarela de pago
 if (confirm(resumen)) {
   // Aquí es donde simula el pago y muestra el mensaje de éxito
-  alert("✅ ¡Pago realizado con éxito! Tu pedido ha sido procesado.");
+  alert("¿ Ir a pagar ?");
   localStorage.removeItem('carrito');
-  window.location.href = "gracias.html";  // Redirigir a una página de "Gracias por tu compra"
+  window.location.href = "pasarela.html";  // Redirigir a una página de pasarela de pago
 }
 }
+
+/* Funciones del boton de ususario */
+
+// Cargar el archivo botonUsuario.html en el contenedor
+fetch("botonUsuario.html")
+    .then(res => res.text())
+    .then(html => {
+      // Inserta el HTML del botón en el contenedor
+      document.getElementById("botonUsuarioContainer").innerHTML = html;
+
+      // obtiene el botón y verifica el estado de la sesión
+      const botonUsuario = document.getElementById("botonUsuario");
+      const usuarioLogueado = JSON.parse(localStorage.getItem("usuarioLogueado"));
+
+      if (usuarioLogueado) {
+        botonUsuario.title = "Cerrar sesión";
+        botonUsuario.onclick = () => {
+          if (confirm("¿Deseas cerrar sesión?")) {
+            localStorage.removeItem("usuarioLogueado");
+            window.location.href = "index.html";  //al cerrar la secion dirige al usuario a la pagina inicial de la tienda
+          }
+        };
+      } else {
+        botonUsuario.title = "Iniciar sesión";
+        botonUsuario.onclick = () => {
+          window.location.href = "prueba_login.html";  // dirige al usuario al login si el usuario no está logueado
+        };
+      }
+    })
+    .catch(error => {
+      console.error("No se pudo cargar el archivo botonUsuario.html", error);
+    });
 
 
   document.addEventListener('DOMContentLoaded', mostrarCarrito);

@@ -276,3 +276,35 @@ function toggleRating(productoId) {
     }
   }
 }
+
+/* Funciones del boton de ususario */
+
+// Cargar el archivo botonUsuario.html en el contenedor
+fetch("botonUsuario.html")
+    .then(res => res.text())
+    .then(html => {
+      // Inserta el HTML del botón en el contenedor
+      document.getElementById("botonUsuarioContainer").innerHTML = html;
+
+      // obtiene el botón y verifica el estado de la sesión
+      const botonUsuario = document.getElementById("botonUsuario");
+      const usuarioLogueado = JSON.parse(localStorage.getItem("usuarioLogueado"));
+
+      if (usuarioLogueado) {
+        botonUsuario.title = "Cerrar sesión";
+        botonUsuario.onclick = () => {
+          if (confirm("¿Deseas cerrar sesión?")) {
+            localStorage.removeItem("usuarioLogueado");
+            window.location.href = "index.html";  //al cerrar la secion dirige al usuario a la pagina inicial de la tienda
+          }
+        };
+      } else {
+        botonUsuario.title = "Iniciar sesión";
+        botonUsuario.onclick = () => {
+          window.location.href = "prueba_login.html";  // dirige al usuario al login si el usuario no está logueado
+        };
+      }
+    })
+    .catch(error => {
+      console.error("No se pudo cargar el archivo botonUsuario.html", error);
+    });

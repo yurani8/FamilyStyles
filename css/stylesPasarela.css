@@ -1,0 +1,61 @@
+
+/* fondo oscuro BARRA */
+#mainNav {
+    background-color: #111620e7; /* tono oscuro */
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  
+  /* Logo más pequeño y ajustado */
+  .logo-familystyle {
+    width: 180px;  /* puedes ajustar este tamaño */
+    height: auto;
+  }
+  .btn-cerrar {
+    position: fixed;
+    top: 20px;             /* Espacio desde arriba */
+    right: 20px;           /* 📍 Aparece a la derecha */
+    background: transparent;
+    border: none;
+    font-size: 28px;
+    color: rgb(209, 208, 208);          /* Puedes cambiar a otro color */
+    cursor: pointer;
+    z-index: 9999;         /* Siempre encima */
+    transition: color 0.3s ease;
+  }
+  
+  body {
+  padding-top: 110px;
+}
+ 
+.titulo-metodo-pago {
+    font-family: 'monserat', sans-serif;
+    color: #000000;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.metodo-pago {
+      cursor: pointer;
+      transition: transform 0.2s;
+      padding: 10px;
+      border: 2px solid transparent;
+      border-radius: 10px;
+    }
+    .metodo-pago:hover {
+      transform: scale(1.05);
+      border-color: #ccc;
+    }
+    .metodo-pago.active {
+      border-color: #007bff;
+      background-color: #e9f5ff;
+    }
+    .captcha-box {
+      font-weight: bold;
+      font-size: 20px;
+      letter-spacing: 3px;
+      background: #f0f0f0;
+      padding: 10px;
+      display: inline-block;
+      user-select: none;
+    }

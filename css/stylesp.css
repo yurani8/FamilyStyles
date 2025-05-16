@@ -1,7 +1,7 @@
 
 /* fondo oscuro BARRA */
 #mainNav {
-    background-color: #1e1f21; /* tono oscuro */
+    background-color: #111620e7 !important; /* tono oscuro */
     padding-top: 10px;
     padding-bottom: 10px;
   }
@@ -26,6 +26,9 @@
   .btn-cerrar:hover {
     color: #ffc107;        /* Dorado al pasar el mouse */
   }
+  body {
+  padding-top: 110px;
+}
   /*tamaño y posición aL contenedor */
   .card {
     display: block;
