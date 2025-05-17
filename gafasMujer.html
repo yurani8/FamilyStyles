@@ -152,8 +152,32 @@
     <div id="chatbot-messages"></div>
     <input type="text" id="chatbot-input" placeholder="Escribe algo..." />
   </div>
+
+  <button class="boton-fijo" onclick="abrirModal()">Tabla de tallas</button>
   
-  <script src="productos.js"></script>
+  <!-- ✅ Modal -->
+  <div id="modalTallas" class="modal-fondo">
+    <div class="modal-contenido">
+      <span class="cerrar-modal" onclick="cerrarModal()">&times;</span>
+      <h2>Tabla de Tallas</h2>
+      <table class="tabla-tallas">
+        <thead>
+          <tr>
+            <th>Talla</th>
+            <th> Ancho del lente x ancho de montura (mm)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>XS</td><td>45 - 125 cm</td></tr>
+          <tr><td>S</td><td>48 - 130 cm</td></tr>
+          <tr><td>M</td><td>50 - 135 cm</td></tr>
+          <tr><td>L</td><td>55 - 140 cm</td></tr>
+          <tr><td>XL</td><td>60 - 145 cm</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <script src="accesorios.js"></script>
   <!-- Contenedor donde se cargará el botón -->
   <div id="botonUsuarioContainer"></div>
   

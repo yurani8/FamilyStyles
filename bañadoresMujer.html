@@ -45,7 +45,8 @@
                             <!-- Buscador por nombre/color -->
                             <div class="col-md-6 mb-3">
                                 <label for="buscar-conjuntos" class="form-label">Buscar producto:</label>
-                                <input type="text" id="buscar-conjuntos" class="form-control" placeholder="gris, beige, cafe, blanco, azul, rosa, marron, verde, amarillo, morado, negro, hueso, naranja, rojo...">
+                                <input type="text" id="buscar-conjuntos" class="form-control" 
+                                placeholder="gris, beige, cafe, blanco, azul, rosa, marron, verde, amarillo, morado, negro, hueso, naranja, rojo...">
                             </div>
                             
                             <!-- Filtro por precio -->
@@ -82,52 +83,54 @@
           
               <div class="row">
                 <!-- Fila 1 -->
-                <div class="col-md-3 mb-4" data-producto-id="bañadorM1" data-nombre ="azul" data-precio="30.000-40.000">
+                <div class="col-md-3 mb-4" data-producto-id="bañadorM1" data-nombre ="blanco" data-precio="30.000-40.000">
                   <div class="card h-100">
+                    <div class="sticker">¡Oferta!</div>
                     <img src="assets/Mujer/trajebañoMujer/bañoM1.jpg" class="card-img-top" alt="Producto 1">
                     <div class="card-body text-center">
-                      <h5 class="card-title">Pantaloneta marina</h5>
-                      <p class="card-text">Bañador masculino en color azul marino, con estampado de pequeños iconos marino</p>
-                      <p class="text-primary fw-bold">$38.000</p>
-                      <button class="btn btn-success" onclick="agregarAlCarrito('Pantaloneta marina', 'assets/Mujer/trajebañoMujer/bañoM1.jpg', 38.000,'adulto')">Agregar al carrito</button>
+                      <h5 class="card-title">Bikini Mariposas Azules</h5>
+                      <p class="card-text">
+                         Bikini de dos piezas en color blanco con estampado de mariposas azules. Diseño clásico de triángulo con tiras ajustables para un ajuste cómodo y favorecedor.</p>
+                      <p class="text-primary fw-bold">$40.000</p>
+                      <button class="btn btn-success" onclick="agregarAlCarrito('Bikini Mariposas Azules', 'assets/Mujer/trajebañoMujer/bañoM1.jpg', 40.000,'adulto')">Agregar al carrito</button>
                     </div>
                   </div>
                 </div>
           
-                <div class="col-md-3 mb-4", data-producto-id="bañadorM2" data-nombre="azul, negro" data-precio="41.000-50.000">
+                <div class="col-md-3 mb-4", data-producto-id="bañadorM2" data-nombre="blanco" data-precio="51.000-60.000">
                   <div class="card h-100">
                     <img src="assets/Mujer/trajebañoMujer/bañoM2.jpg" class="card-img-top" alt="Producto 2">
                     <div class="card-body text-center">
-                      <h5 class="card-title">Pantaloneta tropical</h5>
-                      <p class="card-text">Bañador con diseño de paisajes tropicales en tono azul y negro, con detalles de palmeras </p>
-                      <p class="text-primary fw-bold">$45.000</p>
-                      <button class="btn btn-success" onclick="agregarAlCarrito('Pantaloneta tropical', 'assets/Mujer/trajebañoMujer/bañoM2.jpg', 45.000,'adulto')">Agregar al carrito</button>
+                      <h5 class="card-title">Bikini Blanco Asimétrico</h5>
+                      <p class="card-text">Bikini moderno con top de un solo hombro y diseño cruzado. Color blanco liso y elegante</p>
+                      <p class="text-primary fw-bold">$55.000</p>
+                      <button class="btn btn-success" onclick="agregarAlCarrito('Bikini Blanco Asimétrico', 'assets/Mujer/trajebañoMujer/bañoM2.jpg', 55.000,'adulto')">Agregar al carrito</button>
                     </div>
                   </div>
                 </div>
           
-                <div class="col-md-3 mb-4" data-producto-id="bañadorM3" data-nombre=" negro, blanco" data-precio="40.000-50.000">
+                <div class="col-md-3 mb-4" data-producto-id="bañadorM3" data-nombre="blanco" data-precio="40.000-50.000">
                   <div class="card h-100">
                     <div class="sticker">¡Oferta!</div>
                     <img src="assets/Mujer/trajebañoMujer/bañoM3.jpg" class="card-img-top" alt="Producto 3">
                     <div class="card-body text-center">
-                      <h5 class="card-title">Pantaloneta estampado tropical</h5>
-                      <p class="card-text">Bañador en tonos blanco y negro con estampado de hojas tropicales</p>
+                      <h5 class="card-title">Bikini Clásico con Pareo</h5>
+                      <p class="card-text">Set de bikini blanco con top de triángulo y bottom clásico. Incluye un pareo de malla ligera con flecos decorativos</p>
                       <p class="text-primary fw-bold">$43.000</p>
-                      <button class="btn btn-success" onclick="agregarAlCarrito('Pantaloneta estampado tropical', 'assets/Mujer/trajebañoMujer/bañoM3.jpg', 43.000,'adulto')">Agregar al carrito</button>
+                      <button class="btn btn-success" onclick="agregarAlCarrito('Bikini Clásico con Pareo', 'assets/Mujer/trajebañoMujer/bañoM3.jpg', 43.000,'adulto')">Agregar al carrito</button>
 
                     </div>
                   </div>
                 </div>
 
-                <div class="col-md-3 mb-4" data-producto-id="bañadorM4" data-nombre="azul, blanco" data-precio="51.000-60.000">
+                <div class="col-md-3 mb-4" data-producto-id="bañadorM4" data-nombre="rosado" data-precio="51.000-60.000">
                   <div class="card h-100">
                     <img src="assets/Mujer/trajebañoMujer/bañoM4.jpg" class="card-img-top" alt="Producto 4">
                     <div class="card-body text-center">
-                      <h5 class="card-title">Pantaloneta efecto degradado</h5>
-                      <p class="card-text">Bañador con un diseño moderno de degradado, pasando de azul oscuro en la parte superior a blanco en la parte inferior</p>
+                      <h5 class="card-title">Bikini Rosa Tie-Dye con Falda</h5>
+                      <p class="card-text">Bikini de triángulo en diseño tie-dye rosado. Incluye una falda corta a juego con cintas ajustables</p>
                       <p class="text-primary fw-bold">$52.000</p>
-                      <button class="btn btn-success" onclick="agregarAlCarrito('Pantaloneta efecto degradado', 'assets/Mujer/trajebañoMujer/bañoM4.jpg', 52.000,'adulto')">Agregar al carrito</button>
+                      <button class="btn btn-success" onclick="agregarAlCarrito('Bikini Rosa Tie-Dye con Falda', 'assets/Mujer/trajebañoMujer/bañoM4.jpg', 52.000,'adulto')">Agregar al carrito</button>
 
                     </div>
                   </div>
@@ -135,52 +138,51 @@
                   
                 <!-- Fila 2 -->
                 
-                <div class="col-md-3 mb-4" data-producto-id="bañadorM5" data-nombre="gris, verde" data-precio="40.000-50.000">
+                <div class="col-md-3 mb-4" data-producto-id="bañadorM5" data-nombre="verde" data-precio="40.000-50.000">
                   <div class="card h-100">
                     <div class="sticker">¡Oferta!</div>
                     <img src="assets/Mujer/trajebañoMujer/bañoM5.jpg" class="card-img-top" alt="Producto 5">
                     <div class="card-body text-center">
-                      <h5 class="card-title">Pantaloneta estapado palmeras</h5>
-                      <p class="card-text">Bañador con diseño de degradado de gris a verde claro, acompañado de un estampado de palmeras</p>
+                      <h5 class="card-title">Aqua Bloom</h5>
+                      <p class="card-text">Con un diseño que fusiona frescura y estilo, el traje de baño Aqua Bloom ofrece una cobertura cómoda con su camiseta de manga larga en verde claro y detalles florales en las mangas. </p>
                       <p class="text-primary fw-bold">$40.000</p>
-                      <button class="btn btn-success" onclick="agregarAlCarrito('Pijama Elegante', 'assets/Mujer/trajebañoMujer/bañoM5.jpg', 53.000,'adulto')">Agregar al carrito</button>
+                      <button class="btn btn-success" onclick="agregarAlCarrito('Aqua Bloom', 'assets/Mujer/trajebañoMujer/bañoM5.jpg', 53.000,'adulto')">Agregar al carrito</button>
                     </div>
                   </div>
                 </div>
-                <div class="col-md-3 mb-4", data-producto-id="bañadorM6" data-nombre="blanco, azul" data-precio="40.000-50.000">
+                <div class="col-md-3 mb-4", data-producto-id="bañadorM6" data-nombre="verde, blanco" data-precio="40.000-50.000">
                   <div class="card h-100">
                     <img src="assets/Mujer/trajebañoMujer/bañoM6.jpg" class="card-img-top" alt="Producto 6">
                     <div class="card-body text-center">
-                      <h5 class="card-title">Pantaloneta tropical</h5>
-                      <p class="card-text">Bañador con diseño de degradado en tonos azul, y blanco, con estampado de palmeras</p>
+                      <h5 class="card-title">Selva Ébano</h5>
+                      <p class="card-text">Un bikini de dos piezas con un top verde oscuro con volantes y cordones ajustables. La parte inferior de talle alto resalta con su estampado de hojas en blanco y verde</p>
                       <p class="text-primary fw-bold">$64.000</p>
-                      <button class="btn btn-success" onclick="agregarAlCarrito('Pantaloneta tropical', 'assets/Mujer/trajebañoMujer/bañoM6.jpg', 64.000,'adulto')">Agregar al carrito</button>
+                      <button class="btn btn-success" onclick="agregarAlCarrito('Selva Ébano', 'assets/Mujer/trajebañoMujer/bañoM6.jpg', 64.000,'adulto')">Agregar al carrito</button>
                     </div>
                   </div>
                 </div>
 
                 <div class="col-md-3 mb-4" data-producto-id="bañadorM7" data-nombre="azul, naranja, negro" data-precio="71.000-80.000">
                   <div class="card h-100">
-                    <div class="sticker">¡Oferta!</div>
                     <img src="assets/Mujer/trajebañoMujer/bañoM7.jpg" class="card-img-top" alt="Producto 7">
                     <div class="card-body text-center">
-                      <h5 class="card-title">Set de pantalonetas de baño</h5>
-                      <p class="card-text"> 3 Pantalonetas con estilos distintos, colores: azul, naranja, negro </p>
+                      <h5 class="card-title">Noche Geométrica</h5>
+                      <p class="card-text"> Un bikini de dos piezas con un elegante estampado en blanco y negro. El top de manga corta y escote cuadrado aporta un toque sofisticado, mientras que la parte inferior de talle alto</p>
                       <p class="text-primary fw-bold">$80.000</p>
-                      <button class="btn btn-success" onclick="agregarAlCarrito('Set de pantalonetas de baño', 'assets/Mujer/trajebañoMujer/bañoM7.jpg', 80.000,'adulto')">Agregar al carrito</button>
+                      <button class="btn btn-success" onclick="agregarAlCarrito('Noche Geométrica', 'assets/Mujer/trajebañoMujer/bañoM7.jpg', 80.000,'adulto')">Agregar al carrito</button>
 
                     </div>
                   </div>
                 </div>
-                <div class="col-md-3 mb-4" data-producto-id="bañadorM8" data-nombre="blanco, azul" data-precio="81.000-90.000">
+                <div class="col-md-3 mb-4" data-producto-id="bañadorM8" data-nombre="blanco, azul" data-precio="51.000-60.000">
                   <div class="card h-100">
                     <div class="sticker">¡Oferta!</div>
                     <img src="assets/Mujer/trajebañoMujer/bañoM8.jpg" class="card-img-top" alt="Producto 8">
                     <div class="card-body text-center">
-                      <h5 class="card-title">Set de 3 pantalonetas con estampado</h5>
-                      <p class="card-text">3 Baladores con estampados inspirados en el oceano, en color: azul y blanco</p>
-                      <p class="text-primary fw-bold">$85.000</p>
-                      <button class="btn btn-success" onclick="agregarAlCarrito('Set de 3 pantalonetas con estampado', 'assets/Mujer/trajebañoMujer/bañoM8.jpg', 85.000,'adulto')">Agregar al carrito</button>
+                      <h5 class="card-title">Traje de baño "Brisa Tropical"</h5>
+                      <p class="card-text">Un elegante traje de baño entero con un diseño de flores y hojas tropicales. Destaca por su sección superior azul que se cruza y anuda en la cintura</p>
+                      <p class="text-primary fw-bold">$55.000</p>
+                      <button class="btn btn-success" onclick="agregarAlCarrito('Traje de baño Brisa Tropical', 'assets/Mujer/trajebañoMujer/bañoM8.jpg', 55.000,'adulto')">Agregar al carrito</button>
                     </div>
                   </div>
                 </div>

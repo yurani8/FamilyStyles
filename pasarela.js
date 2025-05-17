@@ -123,10 +123,34 @@ function procesarPago() {
     return;
   }
 
-  alert("✅ ¡Pago exitoso! Gracias por tu compra.");
-  window.location.href = "gracias.html";
-}
+  // Ocultar botón Aceptar
+  document.querySelector('.btn-success').style.display = 'none';
 
+  // Mostrar formulario de dirección
+  const formularioDireccion = `
+  <h4 class="text-center mt-4">Ingresa tus datos de envío</h4>
+  <div class="row mt-3">
+    <div class="col-md-6 mb-3">
+      <input type="text" id="nombre" class="form-control" placeholder="Nombre completo" required>
+      <div class="invalid-feedback">Este campo es obligatorio</div>
+    </div>
+    <div class="col-md-6 mb-3">
+      <input type="text" id="telefono" class="form-control" placeholder="Teléfono" required>
+      <div class="invalid-feedback">Este campo es obligatorio</div>
+    </div>
+    <div class="col-12 mb-3">
+      <input type="text" id="direccion" class="form-control" placeholder="Dirección de envío" required>
+      <div class="invalid-feedback">Este campo es obligatorio</div>
+    </div>
+    <div class="col-12 text-center">
+      <button class="btn btn-primary" onclick="confirmarPago()">Confirmar Pago</button>
+    </div>
+  </div>
+`;
+
+  document.getElementById('formulario-metodo').insertAdjacentHTML('beforeend', formularioDireccion);
+
+}
 /**
  * Muestra un mensaje de error en un campo
  * @param {HTMLElement} campo
@@ -221,3 +245,36 @@ document.addEventListener('keydown', function (e) {
     e.preventDefault();
   }
 });
+
+function validarCampoEnvio(campo) {
+  document.addEventListener('input', function (e) {
+  const campo = e.target;
+  if (!campo.closest('#formularioDireccion')) return;
+
+  const placeholder = campo.getAttribute('placeholder')?.toLowerCase() || "";
+  const valor = campo.value;
+
+  // Solo números para campos que tienen "número", "cvv" o "teléfono"
+  if (placeholder.includes("número") || placeholder.includes("cvv") || placeholder.includes("teléfono")) {
+    campo.value = valor.replace(/\D/g, ''); // elimina todo menos números
+    campo.maxLength = 16; // opcional, si quieres limitar
+    if (!/^\d+$/.test(campo.value)) {
+      mostrarError(campo, 'Solo se permiten números');
+      return;
+    }
+  }
+
+  // Validación fecha de vencimiento
+  if (placeholder.includes("mm/aa") || placeholder.includes("mm/aaaa")) {
+    // lógica existente para fecha
+  }
+
+  // Validación general para no dejar vacío
+  if (campo.value.trim() === '') {
+    mostrarError(campo, 'Este campo es obligatorio');
+  } else {
+    ocultarError(campo);
+  }
+});
+
+}
