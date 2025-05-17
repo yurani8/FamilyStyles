@@ -276,5 +276,7 @@ function validarCampoEnvio(campo) {
     ocultarError(campo);
   }
 });
+alert("✅ ¡Pago exitoso! Gracias por tu compra.");
+  window.location.href = "gracias.html";
 
 }
