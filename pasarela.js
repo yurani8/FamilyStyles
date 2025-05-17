@@ -150,6 +150,8 @@ function procesarPago() {
 
   document.getElementById('formulario-metodo').insertAdjacentHTML('beforeend', formularioDireccion);
 
+alert("✅ ¡Pago exitoso! Gracias por tu compra.");
+  window.location.href = "gracias.html";
 }
 /**
  * Muestra un mensaje de error en un campo
@@ -276,7 +278,5 @@ function validarCampoEnvio(campo) {
     ocultarError(campo);
   }
 });
-alert("✅ ¡Pago exitoso! Gracias por tu compra.");
-  window.location.href = "gracias.html";
 
 }
