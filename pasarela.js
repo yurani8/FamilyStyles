@@ -147,6 +147,8 @@ function procesarPago() {
     </div>
   </div>
 `;
+ alert("✅ ¡Pago exitoso! Gracias por tu compra.");
+    window.location.href = "gracias.html";
 
   document.getElementById('formulario-metodo').insertAdjacentHTML('beforeend', formularioDireccion);
 
@@ -262,8 +264,6 @@ function validarCampoEnvio(campo) {
       mostrarError(campo, 'Solo se permiten números');
       return;
     }
-    alert("✅ ¡Pago exitoso! Gracias por tu compra.");
-    window.location.href = "gracias.html";
   }
 
   // Validación fecha de vencimiento
