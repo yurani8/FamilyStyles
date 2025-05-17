@@ -1,0 +1,59 @@
+/* fondo oscuro BARRA */
+#mainNav {
+    background-color: #111620e7; /* tono oscuro */
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  
+  /* Logo más pequeño y ajustado */
+  .logo-familystyle {
+    width: 180px;  /* puedes ajustar este tamaño */
+    height: auto;
+  }
+  .btn-cerrar {
+    position: fixed;
+    top: 20px;             /* Espacio desde arriba */
+    right: 20px;           /* 📍 Aparece a la derecha */
+    background: transparent;
+    border: none;
+    font-size: 28px;
+    color: rgb(209, 208, 208);          /* Puedes cambiar a otro color */
+    cursor: pointer;
+    z-index: 9999;         /* Siempre encima */
+    transition: color 0.3s ease;
+  }
+  
+  body {
+  padding-top: 250px;
+}
+
+/* Contenido centrado */
+.text-center {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Título principal */
+.text-center h1 {
+  color: #000000;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+/* Párrafo */
+.text-center p.lead {
+  font-size: 1.25rem;
+  color: #6c757d;
+}
+
+/* Botón "Volver al carrito" */
+.text-center .btn {
+  margin-top: 20px;
+  font-size: 1.1rem;
+  padding: 10px 24px;
+  border-radius: 8px;
+}

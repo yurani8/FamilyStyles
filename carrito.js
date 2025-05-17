@@ -168,11 +168,11 @@ if (confirm(resumen)) {
 /* Funciones del boton de ususario */
 
 // Cargar el archivo botonUsuario.html en el contenedor
-fetch("botonUsuario.html")
+fetch("usuarioCarrito.html")
     .then(res => res.text())
     .then(html => {
       // Inserta el HTML del botón en el contenedor
-      document.getElementById("botonUsuarioContainer").innerHTML = html;
+      document.getElementById("botonUsuario1Container").innerHTML = html;
 
       // obtiene el botón y verifica el estado de la sesión
       const botonUsuario = document.getElementById("botonUsuario");
@@ -194,7 +194,7 @@ fetch("botonUsuario.html")
       }
     })
     .catch(error => {
-      console.error("No se pudo cargar el archivo botonUsuario.html", error);
+      console.error("No se pudo cargar el archivo usuarioCarrito.html", error);
     });
 
 
