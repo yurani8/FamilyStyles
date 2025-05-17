@@ -128,26 +128,22 @@ function procesarPago() {
 
   // Mostrar formulario de dirección
   const formularioDireccion = `
-  <h4 class="text-center mt-4">Ingresa tus datos de envío</h4>
-  <div class="row mt-3">
-    <div class="col-md-6 mb-3">
-      <input type="text" id="nombre" class="form-control" placeholder="Nombre completo" required>
-      <div class="invalid-feedback">Este campo es obligatorio</div>
+    <h4 class="text-center mt-4">Ingresa tus datos de envío</h4>
+    <div class="row mt-3">
+      <div class="col-md-6 mb-3">
+        <input type="text" id="nombre" class="form-control" placeholder="Nombre completo" required>
+      </div>
+      <div class="col-md-6 mb-3">
+        <input type="text" id="telefono" class="form-control" placeholder="Teléfono" required>
+      </div>
+      <div class="col-12 mb-3">
+        <input type="text" id="direccion" class="form-control" placeholder="Dirección de envío" required>
+      </div>
+      <div class="col-12 text-center">
+        <button class="btn btn-primary" onclick="confirmarPago()">Confirmar Pago</button>
+      </div>
     </div>
-    <div class="col-md-6 mb-3">
-      <input type="text" id="telefono" class="form-control" placeholder="Teléfono" required>
-      <div class="invalid-feedback">Este campo es obligatorio</div>
-    </div>
-    <div class="col-12 mb-3">
-      <input type="text" id="direccion" class="form-control" placeholder="Dirección de envío" required>
-      <div class="invalid-feedback">Este campo es obligatorio</div>
-    </div>
-    <div class="col-12 text-center">
-      <button class="btn btn-primary" onclick="confirmarPago()">Confirmar Pago</button>
-    </div>
-  </div>
-`;
-
+  `;
   document.getElementById('formulario-metodo').insertAdjacentHTML('beforeend', formularioDireccion);
 
 }
