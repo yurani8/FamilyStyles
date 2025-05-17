@@ -147,8 +147,6 @@ function procesarPago() {
     </div>
   </div>
 `;
- alert("✅ ¡Pago exitoso! Gracias por tu compra.");
-    window.location.href = "gracias.html";
 
   document.getElementById('formulario-metodo').insertAdjacentHTML('beforeend', formularioDireccion);
 
@@ -248,35 +246,37 @@ document.addEventListener('keydown', function (e) {
   }
 });
 
-function validarCampoEnvio(campo) {
-  document.addEventListener('input', function (e) {
-  const campo = e.target;
-  if (!campo.closest('#formularioDireccion')) return;
+function confirmarPago() {
+  const nombre = document.getElementById('nombre')?.value.trim();
+  const telefono = document.getElementById('telefono')?.value.trim();
+  const direccion = document.getElementById('direccion')?.value.trim();
 
-  const placeholder = campo.getAttribute('placeholder')?.toLowerCase() || "";
-  const valor = campo.value;
+  const nombreValido = /^[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+$/;
+  const telefonoValido = /^\d{7,15}$/;
+  const direccionValida = /^[A-Za-z0-9\s#\-\.,°]+$/;
 
-  // Solo números para campos que tienen "número", "cvv" o "teléfono"
-  if (placeholder.includes("número") || placeholder.includes("cvv") || placeholder.includes("teléfono")) {
-    campo.value = valor.replace(/\D/g, ''); // elimina todo menos números
-    campo.maxLength = 16; // opcional, si quieres limitar
-    if (!/^\d+$/.test(campo.value)) {
-      mostrarError(campo, 'Solo se permiten números');
-      return;
-    }
+  if (!nombre || !telefono || !direccion) {
+    alert("Por favor, completa todos los campos de envío.");
+    return;
   }
 
-  // Validación fecha de vencimiento
-  if (placeholder.includes("mm/aa") || placeholder.includes("mm/aaaa")) {
-    // lógica existente para fecha
+  if (!nombreValido.test(nombre)) {
+    alert("El nombre solo puede contener letras y espacios.");
+    return;
   }
 
-  // Validación general para no dejar vacío
-  if (campo.value.trim() === '') {
-    mostrarError(campo, 'Este campo es obligatorio');
-  } else {
-    ocultarError(campo);
+  if (!telefonoValido.test(telefono)) {
+    alert("El teléfono debe tener entre 7 y 15 dígitos numéricos.");
+    return;
   }
-});
 
+  if (!direccionValida.test(direccion)) {
+    alert("La dirección contiene caracteres inválidos.");
+    return;
+  }
+
+  // Mostrar mensaje de éxito
+   alert("✅ ¡Pago exitoso! Gracias por tu compra.");
+  window.location.href = "gracias.html";
 }
+
