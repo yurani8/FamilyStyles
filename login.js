@@ -9,6 +9,18 @@ let correoTemporal = ""; //guarda el correo temporalmente que el usuario registr
         usuarios.push(usuario);
         localStorage.setItem("usuarios", JSON.stringify(usuarios));
         }
+        function validarCampo(valor, tipo = "texto") {
+        const maxCaracteres = 30;
+        const regexTexto = /^[a-zA-Z0-9]{1,30}$/; // Letras y números sin espacios
+        const regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/; // Validación básica de correo
+
+        if (valor.length > maxCaracteres) return false;
+ 
+        if (tipo === "texto") return regexTexto.test(valor);
+        if (tipo === "correo") return regexCorreo.test(valor) && valor.length <= maxCaracteres;
+
+        return false;
+         }
 
         function iniciarSesion(e) {
             e.preventDefault();
