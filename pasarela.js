@@ -148,114 +148,150 @@ function procesarPago() {
 
 }
 /**
- * Muestra un mensaje de error en un campo
- * @param {HTMLElement} campo
- * @param {string} mensaje
+ * Muestra un mensaje de error en el campo especificado.
+ * @param {HTMLElement} campo - Campo del formulario.
+ * @param {string} mensaje - Mensaje de error a mostrar.
  */
 function mostrarError(campo, mensaje) {
-  campo.classList.add('is-invalid');
-  campo.classList.remove('is-valid');
-  const feedback = campo.nextElementSibling;
+  campo.classList.add('El campo es invalido'); // mensaje de error de error
+  campo.classList.remove('El campo es valido'); // Quita estilo de éxito (si lo tenía)
+
+  const feedback = campo.nextElementSibling; // Busca el siguiente elemento (feedback del error)
   if (feedback && feedback.classList.contains('invalid-feedback')) {
-    feedback.textContent = mensaje;
-    feedback.classList.remove('d-none');
-    feedback.classList.add('d-block');
+    feedback.textContent = mensaje; // Muestra el mensaje
+    feedback.classList.remove('d-none'); // Asegura que se vea
+    feedback.classList.add('d-block'); // Aplica estilo visible
   }
 }
 
 /**
- * Oculta el mensaje de error en un campo
- * @param {HTMLElement} campo
+ * Oculta el mensaje de error en un campo cuando se valida correctamente.
+ * @param {HTMLElement} campo - Campo del formulario.
  */
 function ocultarError(campo) {
-  campo.classList.remove('is-invalid');
-  campo.classList.add('is-valid');
+  campo.classList.remove('El campo es invalido'); // Quita estilo de error
+  campo.classList.add('El campo es valido'); // Aplica estilo de éxito
+
   const feedback = campo.nextElementSibling;
   if (feedback && feedback.classList.contains('invalid-feedback')) {
-    feedback.classList.add('d-none');
+    feedback.classList.add('d-none'); // Oculta el mensaje de error
     feedback.classList.remove('d-block');
   }
 }
 
 /**
- * Valida los campos mientras el usuario escribe
+ * Detecta la entrada del usuario en los formularios y valida cada campo en tiempo real.
  */
 document.addEventListener('input', function (e) {
   const campo = e.target;
-  if (!campo.closest('#formulario-metodo')) return;
 
-  const placeholder = campo.getAttribute('placeholder')?.toLowerCase() || "";
-  const valor = campo.value;
+  // Aplica solo a formularios con ID formulario-metodo o formulario-envio
+  if (!campo.closest('#formulario-metodo') && !campo.closest('#formulario-envio')) return;
 
-  // Solo números
-  if (placeholder.includes("número") || placeholder.includes("cvv")) {
-    campo.value = valor.replace(/\D/g, '');
-    campo.maxLength = 16;
+  const id = campo.id;       // ID del campo que se está editando
+  const valor = campo.value; // Valor actual del campo
+
+  // Valida campos que deben tener solo números
+  if (['numero', 'cvv', 'telefono'].includes(id)) {
+    campo.value = valor.replace(/\D/g, ''); // Elimina todo lo que no sea número
     if (!/^\d+$/.test(campo.value)) {
       mostrarError(campo, 'Solo se permiten números');
       return;
     }
   }
 
-  // Fecha de vencimiento
-  if (placeholder.includes("mm/aa") || placeholder.includes("mm/aaaa")) {
-    campo.maxLength = 7;
-    let limpio = valor.replace(/[^\d]/g, '');
+  // Valida formato MM/AAAA para fecha de vencimiento
+  if (id === 'fecha') {
+    campo.maxLength = 7; // Máximo 7 caracteres (MM/AAAA)
+    let limpio = valor.replace(/[^\d]/g, ''); // Quita caracteres que no son dígitos
 
+    // Inserta la barra automáticamente al escribir
     campo.value = limpio.length >= 3 ? limpio.slice(0, 2) + '/' + limpio.slice(2, 6) : limpio;
 
     const partes = campo.value.split('/');
-    if (partes.length === 2) {
-      const mes = parseInt(partes[0], 10);
-      const año = parseInt(partes[1], 10);
-      const añoActual = new Date().getFullYear();
+    const añoActual = new Date().getFullYear();
 
-      if (
-        isNaN(mes) || isNaN(año) ||
-        mes < 1 || mes > 12 ||
-        partes[1].length !== 4 ||
-        año > añoActual
-      ) {
-        mostrarError(campo, `Formato inválido. Usa MM/AAAA (hasta ${añoActual})`);
-        return;
-      }
-    } else {
-      mostrarError(campo, 'Formato inválido. Usa MM/AAAA');
+    // Verifica que el mes y el año sean válidos
+    if (
+      partes.length !== 2 ||
+      isNaN(parseInt(partes[0])) ||
+      isNaN(parseInt(partes[1])) ||
+      parseInt(partes[0]) < 1 ||
+      parseInt(partes[0]) > 12 ||
+      partes[1].length !== 4 ||
+      parseInt(partes[1]) > añoActual
+    ) {
+      mostrarError(campo, `Formato inválido. Usa MM/AAAA (hasta ${añoActual})`);
       return;
     }
   }
 
-  // Validación general
+  // Valida el campo de nombre (solo letras y espacios)
+  if (id === 'nombre') {
+    const regexNombre = /^[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+$/;
+    if (!regexNombre.test(valor.trim())) {
+      mostrarError(campo, 'El nombre solo puede contener letras y espacios');
+      return;
+    }
+  }
+
+  // Valida el campo de dirección (letras, números, espacios y símbolos válidos)
+  if (id === 'direccion') {
+    const regexDireccion = /^[A-Za-z0-9\s#\-\.,°]+$/;
+    if (!regexDireccion.test(valor.trim())) {
+      mostrarError(campo, 'La dirección contiene caracteres inválidos');
+      return;
+    }
+  }
+
+  // Validación general: campo vacío
   if (campo.value.trim() === '') {
     mostrarError(campo, 'Este campo es obligatorio');
   } else {
-    ocultarError(campo);
+    ocultarError(campo); // Si pasa todas las validaciones, se oculta el error
   }
 });
 
 /**
- * Bloquea la tecla espacio en formularios para evitar errores accidentales
+ * Previene que se use la tecla espacio en campos donde no debe permitirse.
  */
 document.addEventListener('keydown', function (e) {
-  if (e.target.closest('#formulario-metodo') && e.key === ' ') {
-    e.preventDefault();
+  const campo = e.target;
+
+  // Aplica solo a los formularios relevantes
+  if (!campo.closest('#formulario-metodo') && !campo.closest('#formulario-envio')) return;
+
+  const id = campo.id;
+
+  // Solo se permite espacio en campos de nombre y dirección
+  const permiteEspacio = id === 'nombre' || id === 'direccion';
+
+  if (e.key === ' ' && !permiteEspacio) {
+    e.preventDefault(); // Bloquea la tecla espacio
   }
 });
 
+/**
+ * Función que se ejecuta al enviar el formulario de envío/pago
+ * Realiza validaciones finales antes de enviar
+ */
 function confirmarPago() {
   const nombre = document.getElementById('nombre')?.value.trim();
   const telefono = document.getElementById('telefono')?.value.trim();
   const direccion = document.getElementById('direccion')?.value.trim();
 
+  // Expresiones regulares para validar los valores ingresados
   const nombreValido = /^[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+$/;
-  const telefonoValido = /^\d{7,15}$/;
+  const telefonoValido = /^\d{7,15}$/; // Entre 7 y 15 dígitos
   const direccionValida = /^[A-Za-z0-9\s#\-\.,°]+$/;
 
+  // Validación de campos vacíos
   if (!nombre || !telefono || !direccion) {
     alert("Por favor, completa todos los campos de envío.");
     return;
   }
 
+  // Validación individual de cada campo
   if (!nombreValido.test(nombre)) {
     alert("El nombre solo puede contener letras y espacios.");
     return;
@@ -271,8 +307,7 @@ function confirmarPago() {
     return;
   }
 
-  // Mostrar mensaje de éxito
-   alert("✅ ¡Pago exitoso! Gracias por tu compra.");
+  // Si todo es válido, muestra mensaje de éxito y redirige
+  alert("✅ ¡Pago exitoso! Gracias por tu compra.");
   window.location.href = "gracias.html";
 }
-

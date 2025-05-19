@@ -77,6 +77,3 @@ fetch("botonUsuario.html")
     .catch(error => {
       console.error("No se pudo cargar el archivo botonUsuario.html", error);
     });
-
-
-
