@@ -9,6 +9,7 @@ let correoTemporal = ""; //guarda el correo temporalmente que el usuario registr
         usuarios.push(usuario);
         localStorage.setItem("usuarios", JSON.stringify(usuarios));
         }
+
         function validarCampo(valor, tipo = "texto") {
         const maxCaracteres = 30;
         const regexTexto = /^[a-zA-Z0-9]{1,30}$/; // Letras y números sin espacios
@@ -27,6 +28,10 @@ let correoTemporal = ""; //guarda el correo temporalmente que el usuario registr
             const usuario = document.getElementById("usuario").value.trim();
             const password = document.getElementById("password").value;
           
+            if (!validarCampo(usuario, "texto") || !validarCampo(password, "texto")) {
+           alert("⚠️ Usuario y contraseña no deben contener espacios, caracteres especiales ni exceder 30 caracteres.");
+           return;
+           }
             const usuarios = getUsuarios();
             const encontrado = usuarios.find(u =>
               (u.usuario === usuario || u.correo === usuario) && u.password === password
@@ -47,7 +52,15 @@ let correoTemporal = ""; //guarda el correo temporalmente que el usuario registr
         const nuevoUsuario = document.getElementById("nuevoUsuario").value.trim();
         const nuevoCorreo = document.getElementById("nuevoCorreo").value.trim();
         const nuevaPassword = document.getElementById("nuevaPassword").value;
-
+        
+         if (
+        !validarCampo(nuevoUsuario, "texto") ||
+        !validarCampo(nuevoCorreo, "correo") ||
+        !validarCampo(nuevaPassword, "texto")
+        ) {
+        alert("⚠️ No se permiten espacios, caracteres especiales, y el límite es 30 caracteres por campo.");
+        return;
+        }
         const usuarios = getUsuarios();
         const yaExiste = usuarios.find(u => u.usuario === nuevoUsuario || u.correo === nuevoCorreo);
 
